@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CartesianGeometry - geometry-core</title>
+    <meta name="og:title" content="CartesianGeometry - geometry-core">
+    <meta name="twitter:title" content="CartesianGeometry - geometry-core">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h2 id="imodel.js packages">iModel.js Packages</h2>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/&apos;&gt;imodeljs-frontend&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/" class="table-of-contents-link">imodeljs-frontend</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/imodelapp/" class="table-of-contents-link">IModelApp</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/imodelconnection/" class="table-of-contents-link">IModelConnection</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/elementstate/" class="table-of-contents-link">ElementState</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/modelstate/" class="table-of-contents-link">ModelState</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/tools/" class="table-of-contents-link">Tools</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/views/" class="table-of-contents-link">Views</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/locatingelements/" class="table-of-contents-link">Locating Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/accudraw/" class="table-of-contents-link">AccuDraw</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/notifications/" class="table-of-contents-link">Notifications</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/selectionset/" class="table-of-contents-link">Selection Set</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/rendering/" class="table-of-contents-link">Rendering</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/&apos;&gt;imodeljs-common&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/" class="table-of-contents-link">imodeljs-common</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/wireformats/" class="table-of-contents-link">Wire Formats</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/codes/" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/geometry/" class="table-of-contents-link">Geometry</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/views/" class="table-of-contents-link">Views</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/symbology/" class="table-of-contents-link">Symbology</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/rendering/" class="table-of-contents-link">Rendering</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/imodels/" class="table-of-contents-link">iModels</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/rpcinterface/" class="table-of-contents-link">RPC Interface</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/ecsql/" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/&apos;&gt;imodeljs-backend&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/" class="table-of-contents-link">imodeljs-backend</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/imodelhost/" class="table-of-contents-link">IModelHost</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/imodels/" class="table-of-contents-link">iModels</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/schema/" class="table-of-contents-link">Schema</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/models/" class="table-of-contents-link">Models</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/elements/" class="table-of-contents-link">Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/codes/" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/viewdefinitions/" class="table-of-contents-link">View Definitions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/relationships/" class="table-of-contents-link">Relationships</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/elementaspects/" class="table-of-contents-link">Element Aspects</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/categories/" class="table-of-contents-link">Categories</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/symbology/" class="table-of-contents-link">Symbology</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/ecdb/" class="table-of-contents-link">ECDb</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/ecsql/" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/portability/" class="table-of-contents-link">Portability</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/&apos;&gt;imodeljs-clients&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/" class="table-of-contents-link">imodeljs-clients</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/authentication/" class="table-of-contents-link">Authentication</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/baseclients/" class="table-of-contents-link">Base Clients</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/connectservices/" class="table-of-contents-link">Connect Services</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodelhub/" class="table-of-contents-link">iModel Hub</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodelhubevents/" class="table-of-contents-link">iModel Hub Events</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodelhubglobalevents/" class="table-of-contents-link">iModel Hub Global Events</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodels/" class="table-of-contents-link">iModels</a></li>
+    <li>Other Services</li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/utils/" class="table-of-contents-link">Utils</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/&apos;&gt;imodeljs-markup&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/" class="table-of-contents-link">imodeljs-markup</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/markupapp/" class="table-of-contents-link">MarkupApp</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/markuptools/" class="table-of-contents-link">Markup Tools</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/&apos;&gt;bentleyjs-core&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/" class="table-of-contents-link">bentleyjs-core</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/besqlite/" class="table-of-contents-link">BeSQLite</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/errors/" class="table-of-contents-link">Errors</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/events/" class="table-of-contents-link">Events</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/ids/" class="table-of-contents-link">Ids</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/logging/" class="table-of-contents-link">Logging</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/utils/" class="table-of-contents-link">Utils</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/&apos;&gt;geometry-core&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/" class="table-of-contents-link">geometry-core</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/cartesiangeometry/" class="table-of-contents-link">Cartesian Geometry</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/arraysandinterfaces/" class="table-of-contents-link">Arrays &amp; Interfaces</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/bspline/" class="table-of-contents-link">Bspline</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/curve/" class="table-of-contents-link">Curve</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/numerics/" class="table-of-contents-link">Numerics</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/polyface/" class="table-of-contents-link">Polyface</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/serialization/" class="table-of-contents-link">Serialization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/solid/" class="table-of-contents-link">Solid</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/topology/" class="table-of-contents-link">Topology</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference/">API Reference</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference/geometry-core/">geometry-core</a> > CartesianGeometry</div>
+            
+            <h1 id="cartesiangeometry">CartesianGeometry</h1>
+<p>Points, Vectors, Planes, and Transformations for x,y,z geometry.</p>
+<ul>
+<li>Fundamental cartesian geometry objects:</li>
+<li><ul>
+<li>Point2d, Point3d -- points with x,y,z coordinates</li>
+</ul>
+</li>
+<li><ul>
+<li>Vector2d, Vector3d -- vectors with x,y,z coordinates</li>
+</ul>
+</li>
+<li><ul>
+<li>Matrix3d -- 3x3 matrix</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>commonly used for pure rotations</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>scale and skew entries are also allowed.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>Transform -- an origin and axes.</li>
+</ul>
+</li>
+<li><ul>
+<li>Range1d, Range2d, Range3d -- subsets of 1d, 2d, and 3d space bounded by low and high values.</li>
+</ul>
+</li>
+<li><ul>
+<li>Ray3d -- a ray defined by origin and direction vector</li>
+</ul>
+</li>
+<li><ul>
+<li>Plane3dByOriginAndUnitNormal -- a plane defined by an origin and a single vector which is perpendicular to the plane</li>
+</ul>
+</li>
+<li><ul>
+<li>plane3dByOriginAndVectors -- a plane defined by an origin and two vectors in the plane.</li>
+</ul>
+</li>
+<li>Angles</li>
+<li><ul>
+<li>Angle -- a strongly typed angle object whose method names make it clear whether input and outputs are degrees or radians.</li>
+</ul>
+</li>
+<li><ul>
+<li>AngleSweep -- an angular interval</li>
+</ul>
+</li>
+<li><ul>
+<li>YawPitchAndRollAngles -- 3 angles that define a rotated coordinate system.</li>
+</ul>
+</li>
+<li>Utility classes</li>
+<li><ul>
+<li>FrameBuilder -- construction of coordinate frames from mixed data sources.</li>
+</ul>
+</li>
+<li><ul>
+<li>ClipPlane -- a single plane</li>
+</ul>
+</li>
+<li><ul>
+<li>ConvexClipPlaneSet -- an array of planes bounding a convex volume</li>
+</ul>
+</li>
+<li><ul>
+<li>ClipPlaneSet -- an array of ConvexClipPlaneSet, defining the union of their volumes</li>
+</ul>
+</li>
+<li><ul>
+<li>Constant -- various numeric values exported as readonly constants</li>
+</ul>
+</li>
+</ul>
+<h2 class="h-classes">Classes<a id="classes" class="heading-anchor" href="#classes"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>&#xA0;</th>
+</tr>
+<tr>
+<td class="h-alternatingcctreebuilder"><a href="alternatingcctreebuilder">AlternatingCCTreeBuilder</a><a id="alternatingcctreebuilder" class="heading-anchor" href="#alternatingcctreebuilder"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Context structure for building an AlternatingConvexClipTreeNode from a polygon.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-alternatingcctreenode"><a href="alternatingcctreenode">AlternatingCCTreeNode</a><a id="alternatingcctreenode" class="heading-anchor" href="#alternatingcctreenode"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>An AlternatingConvexClipTreeNode is a node in a tree structure in which</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-alternatingcctreenodecurveclipper"><a href="alternatingcctreenodecurveclipper">AlternatingCCTreeNodeCurveClipper</a><a id="alternatingcctreenodecurveclipper" class="heading-anchor" href="#alternatingcctreenodecurveclipper"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-clipplane"><a href="clipplane">ClipPlane</a><a id="clipplane" class="heading-anchor" href="#clipplane"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A ClipPlane is a single plane represented as</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-clipprimitive"><a href="clipprimitive">ClipPrimitive</a><a id="clipprimitive" class="heading-anchor" href="#clipprimitive"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>* ClipPrimitve is a base class for clipping implementations that use</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-clipshape"><a href="clipshape">ClipShape</a><a id="clipshape" class="heading-anchor" href="#clipshape"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A clipping volume defined by a shape (an array of 3d points using only x and y dimensions).</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-clipvector"><a href="clipvector">ClipVector</a><a id="clipvector" class="heading-anchor" href="#clipvector"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Class holding an array structure of shapes defined by <code>ClipPrimitive</code></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-convexclipplaneset"><a href="convexclipplaneset">ConvexClipPlaneSet</a><a id="convexclipplaneset" class="heading-anchor" href="#convexclipplaneset"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A ConvexClipPlaneSet is a collection of ClipPlanes, often used for bounding regions of space.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-framebuilder"><a href="framebuilder">FrameBuilder</a><a id="framebuilder" class="heading-anchor" href="#framebuilder"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Helper class to accumulate points and vectors until there is enough data to define a coordinate system.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-geometry"><a href="geometry">Geometry</a><a id="geometry" class="heading-anchor" href="#geometry"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Class containing static methods for typical numeric operations.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-numberarray"><a href="numberarray">NumberArray</a><a id="numberarray" class="heading-anchor" href="#numberarray"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The <code>NumberArray</code> class contains static methods that act on arrays of numbers.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-plane3dbyoriginandunitnormal"><a href="plane3dbyoriginandunitnormal">Plane3dByOriginAndUnitNormal</a><a id="plane3dbyoriginandunitnormal" class="heading-anchor" href="#plane3dbyoriginandunitnormal"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A plane defined by</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-plane3dbyoriginandvectors"><a href="plane3dbyoriginandvectors">Plane3dByOriginAndVectors</a><a id="plane3dbyoriginandvectors" class="heading-anchor" href="#plane3dbyoriginandvectors"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A Point3dVector3dVector3d is an origin and a pair of vectors.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-point2d"><a href="point2d">Point2d</a><a id="point2d" class="heading-anchor" href="#point2d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>2D point with <code>x</code>,<code>y</code> as properties</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-point2darray"><a href="point2darray">Point2dArray</a><a id="point2darray" class="heading-anchor" href="#point2darray"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The <code>Point2dArray</code> class contains static methods that act on arrays of 2d points.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-point2darraycarrier"><a href="point2darraycarrier">Point2dArrayCarrier</a><a id="point2darraycarrier" class="heading-anchor" href="#point2darraycarrier"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Helper object to access members of a Point2d[] in geometric calculations.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-point3darray"><a href="point3darray">Point3dArray</a><a id="point3darray" class="heading-anchor" href="#point3darray"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The <code>Point3dArray</code> class contains static methods that act on arrays of 3d points.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-point3darraycarrier"><a href="point3darraycarrier">Point3dArrayCarrier</a><a id="point3darraycarrier" class="heading-anchor" href="#point3darraycarrier"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Helper object to access members of a Point3d[] in geometric calculations.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-point4darray"><a href="point4darray">Point4dArray</a><a id="point4darray" class="heading-anchor" href="#point4darray"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The <code>Point4dArray</code> class contains static methods that act on arrays of 4d points.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-polygonops"><a href="polygonops">PolygonOps</a><a id="polygonops" class="heading-anchor" href="#polygonops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Various (static method) computations for arrays of points interpreted as a polygon.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-range1d"><a href="range1d">Range1d</a><a id="range1d" class="heading-anchor" href="#range1d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Range on a 1d axis</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-range2d"><a href="range2d">Range2d</a><a id="range2d" class="heading-anchor" href="#range2d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Range box in xy plane</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-range3d"><a href="range3d">Range3d</a><a id="range3d" class="heading-anchor" href="#range3d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Axis aligned range in 3D.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-rangebase"><a href="rangebase">RangeBase</a><a id="rangebase" class="heading-anchor" href="#rangebase"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Base class for Range1d, Range2d, Range3d.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-ray3d"><a href="ray3d">Ray3d</a><a id="ray3d" class="heading-anchor" href="#ray3d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A Ray3d contains</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-segment1d"><a href="segment1d">Segment1d</a><a id="segment1d" class="heading-anchor" href="#segment1d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>* A Segment1d is an interval of an axis named x.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-transform"><a href="transform">Transform</a><a id="transform" class="heading-anchor" href="#transform"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A transform is an origin and a Matrix3d.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-unionofconvexclipplanesets"><a href="unionofconvexclipplanesets">UnionOfConvexClipPlaneSets</a><a id="unionofconvexclipplanesets" class="heading-anchor" href="#unionofconvexclipplanesets"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>A collection of ConvexClipPlaneSets.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-vector2d"><a href="vector2d">Vector2d</a><a id="vector2d" class="heading-anchor" href="#vector2d"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>2D vector with <code>x</code>,<code>y</code> as properties</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-vector3darray"><a href="vector3darray">Vector3dArray</a><a id="vector3darray" class="heading-anchor" href="#vector3darray"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The <code>Vector3ddArray</code> class contains static methods that act on arrays of 2d vectors.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-xy"><a href="xy">XY</a><a id="xy" class="heading-anchor" href="#xy"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Minimal object containing x,y and operations that are meaningful without change in both point and vector.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-yawpitchrollangles"><a href="yawpitchrollangles">YawPitchRollAngles</a><a id="yawpitchrollangles" class="heading-anchor" href="#yawpitchrollangles"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Three angles that determine the orientation of an object in space.</td>
+<td>&#xA0;</td>
+</tr>
+</tbody></table><h2 class="h-enumerations">Enumerations<a id="enumerations" class="heading-anchor" href="#enumerations"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>&#xA0;</th>
+</tr>
+<tr>
+<td class="h-axisindex"><a href="axisindex">AxisIndex</a><a id="axisindex" class="heading-anchor" href="#axisindex"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Enumeration of numeric indices of 3 axes AxisIndex.X, AxisIndex.Y, AxisIndex.Z</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-axisorder"><a href="axisorder">AxisOrder</a><a id="axisorder" class="heading-anchor" href="#axisorder"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Enumeration of the 6 possible orderings of XYZ axis order</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-axisscaleselect"><a href="axisscaleselect">AxisScaleSelect</a><a id="axisscaleselect" class="heading-anchor" href="#axisscaleselect"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Enumeration among choice for how a coordinate transformation should incorporate scaling.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-clipmaskxyzrangeplanes"><a href="clipmaskxyzrangeplanes">ClipMaskXYZRangePlanes</a><a id="clipmaskxyzrangeplanes" class="heading-anchor" href="#clipmaskxyzrangeplanes"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Bit mask type for referencing subsets of 6 planes of range box.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-standardviewindex"><a href="standardviewindex">StandardViewIndex</a><a id="standardviewindex" class="heading-anchor" href="#standardviewindex"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Standard views.</td>
+<td>&#xA0;</td>
+</tr>
+</tbody></table><h2 class="h-interfaces">Interfaces<a id="interfaces" class="heading-anchor" href="#interfaces"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>&#xA0;</th>
+</tr>
+<tr>
+<td class="h-bejsonfunctions"><a href="bejsonfunctions">BeJSONFunctions</a><a id="bejsonfunctions" class="heading-anchor" href="#bejsonfunctions"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Interace for <code>toJSON</code> and <code>setFromJSON</code> methods</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-isnullcheck"><a href="isnullcheck">IsNullCheck</a><a id="isnullcheck" class="heading-anchor" href="#isnullcheck"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for class with <code>isNull():boolean</code> method</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-planealtitudeevaluator"><a href="planealtitudeevaluator">PlaneAltitudeEvaluator</a><a id="planealtitudeevaluator" class="heading-anchor" href="#planealtitudeevaluator"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>Interface so various plane representations can be used by algorithms that just want altitude evaluations.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-trigvalues"><a href="trigvalues">TrigValues</a><a id="trigvalues" class="heading-anchor" href="#trigvalues"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>object with a radians value and its associated cosine and sine values.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-writablelowandhighxy"><a href="writablelowandhighxy">WritableLowAndHighXY</a><a id="writablelowandhighxy" class="heading-anchor" href="#writablelowandhighxy"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for class with named properties <code>low</code> and <code>high</code>, both being <code>WriteableXAndY</code></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-writablelowandhighxyz"><a href="writablelowandhighxyz">WritableLowAndHighXYZ</a><a id="writablelowandhighxyz" class="heading-anchor" href="#writablelowandhighxyz"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for class with named properties <code>low</code> and <code>high</code>, both being <code>WriteableXYAndZ</code></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-writablexandy"><a href="writablexandy">WritableXAndY</a><a id="writablexandy" class="heading-anchor" href="#writablexandy"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for class with <code>x</code> and <code>y</code> as number properties.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-writablexyandz"><a href="writablexyandz">WritableXYAndZ</a><a id="writablexyandz" class="heading-anchor" href="#writablexyandz"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for class with <code>x</code>, <code>y</code>, <code>z</code> as number property.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-writeablehasz"><a href="writeablehasz">WriteableHasZ</a><a id="writeablehasz" class="heading-anchor" href="#writeablehasz"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for class with <code>z</code> as number property.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-yawpitchrollprops"><a href="yawpitchrollprops">YawPitchRollProps</a><a id="yawpitchrollprops" class="heading-anchor" href="#yawpitchrollprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>angle properties of a <code>YawPitchRoll</code> orientation</td>
+<td>&#xA0;</td>
+</tr>
+</tbody></table><h2 class="h-type-aliases">Type Aliases<a id="type-aliases" class="heading-anchor" href="#type-aliases"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>Name</th>
+<th>Description</th>
+<th>&#xA0;</th>
+</tr>
+<tr>
+<td class="h-angleprops"><a href="angleprops">AngleProps</a><a id="angleprops" class="heading-anchor" href="#angleprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The Properties for a JSON representation of an Angle.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-anglesweepprops"><a href="anglesweepprops">AngleSweepProps</a><a id="anglesweepprops" class="heading-anchor" href="#anglesweepprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>The Properties for a JSON representation of an AngleSweep.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-hasz"><a href="hasz">HasZ</a><a id="hasz" class="heading-anchor" href="#hasz"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for readable <code>z</code> number members.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-lowandhighxy"><a href="lowandhighxy">LowAndHighXY</a><a id="lowandhighxy" class="heading-anchor" href="#lowandhighxy"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for type with readable <code>low</code> and <code>high</code> members which have <code>x</code> and <code>y</code> number members.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-lowandhighxyz"><a href="lowandhighxyz">LowAndHighXYZ</a><a id="lowandhighxyz" class="heading-anchor" href="#lowandhighxyz"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for type with readable <code>low</code> and <code>high</code> members which have <code>x</code>, <code>y</code>, and <code>z</code> number members.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-matrix3dprops"><a href="matrix3dprops">Matrix3dProps</a><a id="matrix3dprops" class="heading-anchor" href="#matrix3dprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json (one of)</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-range1dprops"><a href="range1dprops">Range1dProps</a><a id="range1dprops" class="heading-anchor" href="#range1dprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json representing a Range1d</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-range2dprops"><a href="range2dprops">Range2dProps</a><a id="range2dprops" class="heading-anchor" href="#range2dprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json representing a Range2d</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-range3dprops"><a href="range3dprops">Range3dProps</a><a id="range3dprops" class="heading-anchor" href="#range3dprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json representing a Range3d</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-transformprops"><a href="transformprops">TransformProps</a><a id="transformprops" class="heading-anchor" href="#transformprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json (one of)</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-xandy"><a href="xandy">XAndY</a><a id="xandy" class="heading-anchor" href="#xandy"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for readable <code>x</code> and <code>y</code> number members.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-xyandz"><a href="xyandz">XYAndZ</a><a id="xyandz" class="heading-anchor" href="#xyandz"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for type with readable <code>x</code>, <code>y</code>, <code>z</code> number members.</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-xyprops"><a href="xyprops">XYProps</a><a id="xyprops" class="heading-anchor" href="#xyprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json (one of)</td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-xyzprops"><a href="xyzprops">XYZProps</a><a id="xyzprops" class="heading-anchor" href="#xyzprops"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td>interface for variant json (one of)</td>
+<td>&#xA0;</td>
+</tr>
+</tbody></table>
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a data-target="#inner-nav-classes" class='title' href="#classes"/>
+            <b class='dropdown-menu-title menu-text'>Classes</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-classes" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#alternatingcctreebuilder">AlternatingCCTreeBuilder</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#alternatingcctreenode">AlternatingCCTreeNode</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#alternatingcctreenodecurveclipper">AlternatingCCTreeNodeCurveClipper</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#clipplane">ClipPlane</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#clipprimitive">ClipPrimitive</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#clipshape">ClipShape</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#clipvector">ClipVector</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#convexclipplaneset">ConvexClipPlaneSet</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#framebuilder">FrameBuilder</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#geometry">Geometry</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#numberarray">NumberArray</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#plane3dbyoriginandunitnormal">Plane3dByOriginAndUnitNormal</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#plane3dbyoriginandvectors">Plane3dByOriginAndVectors</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#point2d">Point2d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#point2darray">Point2dArray</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#point2darraycarrier">Point2dArrayCarrier</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#point3darray">Point3dArray</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#point3darraycarrier">Point3dArrayCarrier</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#point4darray">Point4dArray</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#polygonops">PolygonOps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#range1d">Range1d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#range2d">Range2d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#range3d">Range3d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#rangebase">RangeBase</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#ray3d">Ray3d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#segment1d">Segment1d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#transform">Transform</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#unionofconvexclipplanesets">UnionOfConvexClipPlaneSets</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#vector2d">Vector2d</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#vector3darray">Vector3dArray</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#xy">XY</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#yawpitchrollangles">YawPitchRollAngles</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-enumerations" class='title' href="#enumerations"/>
+            <b class='dropdown-menu-title menu-text'>Enumerations</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-enumerations" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#axisindex">AxisIndex</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#axisorder">AxisOrder</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#axisscaleselect">AxisScaleSelect</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#clipmaskxyzrangeplanes">ClipMaskXYZRangePlanes</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#standardviewindex">StandardViewIndex</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-interfaces" class='title' href="#interfaces"/>
+            <b class='dropdown-menu-title menu-text'>Interfaces</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-interfaces" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#bejsonfunctions">BeJSONFunctions</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#isnullcheck">IsNullCheck</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#planealtitudeevaluator">PlaneAltitudeEvaluator</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#trigvalues">TrigValues</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#writablelowandhighxy">WritableLowAndHighXY</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#writablelowandhighxyz">WritableLowAndHighXYZ</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#writablexandy">WritableXAndY</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#writablexyandz">WritableXYAndZ</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#writeablehasz">WriteableHasZ</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#yawpitchrollprops">YawPitchRollProps</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-type-aliases" class='title' href="#type-aliases"/>
+            <b class='dropdown-menu-title menu-text'>Type Aliases</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-type-aliases" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#angleprops">AngleProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#anglesweepprops">AngleSweepProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#hasz">HasZ</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#lowandhighxy">LowAndHighXY</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#lowandhighxyz">LowAndHighXYZ</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#matrix3dprops">Matrix3dProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#range1dprops">Range1dProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#range2dprops">Range2dProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#range3dprops">Range3dProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#transformprops">TransformProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#xandy">XAndY</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#xyandz">XYAndZ</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#xyprops">XYProps</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#xyzprops">XYZProps</a>
+                    </li>
+            </ul>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

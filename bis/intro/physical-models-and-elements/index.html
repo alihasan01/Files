@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Physical Models and Elements - iModel.js</title>
+    <meta name="og:title" content="Physical Models and Elements - iModel.js">
+    <meta name="twitter:title" content="Physical Models and Elements - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="bis">BIS</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/" class="table-of-contents-link">Introduction</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/modeling-with-bis" class="table-of-contents-link">Modeling with BIS</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/bis-organization" class="table-of-contents-link">BIS Organization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/fabric-of-the-universe" class="table-of-contents-link">Fabric of the Universe</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/element-fundamentals" class="table-of-contents-link">Element Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/codes" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/elementaspect-fundamentals" class="table-of-contents-link">ElementAspect Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/mixins" class="table-of-contents-link">Mixins</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/model-fundamentals" class="table-of-contents-link">Model Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/relationship-fundamentals" class="table-of-contents-link">Relationship Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schemas-domains" class="table-of-contents-link">Schemas (&#x201C;Domains&#x201D;)</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-hierarchy" class="table-of-contents-link">Information Hierarchy</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/physical-models-and-elements" class="table-of-contents-link">Physical Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/functional-models-and-elements" class="table-of-contents-link">Functional Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/analysis-models-and-elements" class="table-of-contents-link">Analysis Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-models-and-elements" class="table-of-contents-link">Information Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/physical-hierarchy-organization" class="table-of-contents-link">PhysicalModel Hierarchy</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/categories" class="table-of-contents-link">Categories</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schema-customization" class="table-of-contents-link">Schema Customization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/appendix-a-data-evolution-across-time" class="table-of-contents-link">Data Evolution Across Time</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schema-versioning-and-generations" class="table-of-contents-link">Schema Versioning</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/glossary" class="table-of-contents-link">BIS Glossary</a></li>
+    </ul>
+    <!-- TODO: The following are not linked in...?
+    ./domains/*
+    ./intro/appendix-c-bis-domain-design-fundamentals.md
+    ./intro/bis-schema-validation.md
+    ./intro/units.md
+    -->
+    <p>&#xA0;</p>
+    <h3 id="bis naming guidelines">BIS Naming Guidelines</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/rules-and-recommendations" class="table-of-contents-link">Rules and Recommendations</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/special-terms" class="table-of-contents-link">Special Terms</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/summary-of-exceptions" class="table-of-contents-link">Summary of Exceptions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/standard-abbreviations-and-acronyms" class="table-of-contents-link">Abbreviations and Acronyms</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/standard-relationship-strengths-names" class="table-of-contents-link">Relationship &#x201C;Strengths&#x201D;</a></li>
+    </ul>
+    <p>&#xA0;</p>
+    <h3 id="ec">EC</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-schema" class="table-of-contents-link">ECSchema</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-class" class="table-of-contents-link">ECClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-entity-class" class="table-of-contents-link">ECEntityClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-mixin-class" class="table-of-contents-link">ECMixinClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-struct-class" class="table-of-contents-link">ECStructClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-custom-attribute-class" class="table-of-contents-link">ECCustomAttributeClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-relationship-class" class="table-of-contents-link">ECRelationshipClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-property" class="table-of-contents-link">ECProperty</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-custom-attributes" class="table-of-contents-link">ECCustomAttributes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-enumeration" class="table-of-contents-link">ECEnumeration</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/kindofquantity" class="table-of-contents-link">KindOfQuantity</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/property-category" class="table-of-contents-link">PropertyCategory</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/primitive-types" class="table-of-contents-link">PrimitiveTypes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/customattribute-container-types" class="table-of-contents-link">CustomAttribute Container Types</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-unit" class="table-of-contents-link">Unit</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-constant" class="table-of-contents-link">Constant</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-phenomenon" class="table-of-contents-link">Phenomenon</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-unitsystem" class="table-of-contents-link">UnitSystem</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-format" class="table-of-contents-link">Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-name" class="table-of-contents-link">ECName</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/differences-between-ec2-and-ec3" class="table-of-contents-link">Changes Between ECObjects 2 and 3</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/">Base Infrastructure Schema</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/intro/">intro</a> > physical-models-and-elements</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/bis%2Fintro%2Fphysical-models-and-elements.md" target="_blank">Edit this page</a></div>
+            <h1 id="physical models and elements">Physical Models and Elements</h1>
+<!-- Responsible for this page: ?????? -->
+<h2 class="h-introduction">Introduction<a id="introduction" class="heading-anchor" href="#introduction"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p><code>PhysicalModels</code> and <code>PhysicalElements</code> are used to model the physical world, as it exists currently, as it existed in the past, or as it is expected to exist in the future.</p>
+<p>Any object in the real world is modeled as a PhysicalElement a maximum of once within a BIS repository. The various disciplines that work together on infrastructure can <em>not</em> each have their own PhysicalElement for the same real-world object. Modeling the physical world is a cooperative, coordinated effort.</p>
+<p>In BIS, the following classes are central in modeling the physical world:</p>
+<ul>
+<li>PhysicalElement</li>
+<li>PhysicalType</li>
+<li>PhysicalModel</li>
+</ul>
+<h2 class="h-physicalelements">PhysicalElements<a id="physicalelements" class="heading-anchor" href="#physicalelements"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p><code>PhysicalElement</code>s are use to model real world physical entities. PhysicalElements always have a position in real world coordinates that is relevant for infrastructure construction, operation or maintenance.</p>
+<p>It is usually easy to determine which objects should be modeled by a PhysicalElement. If the answers to the following three questions are &quot;yes&quot;, then the object is a good candidate for modeling with a PhysicalElement:</p>
+<ol>
+<li>Does the object have mass?</li>
+<li>Can the object be touched?</li>
+<li>Are the spatial and location characteristics of the object important in constructing, operating or maintaining infrastructure?</li>
+</ol>
+<p>For example, a paper contract has mass and can be touched, but its spatial and location characteristics are not important for infrastructure purposes, so it should <em>not</em> be modeled with a PhysicalElement.</p>
+<p>Examples of entities that are modeled with PhysicalElements are:</p>
+<ul>
+<li>Pumps</li>
+<li>Roads</li>
+<li>Sewer Lines</li>
+<li>Cranes (when true shape and position is used in construction planning)</li>
+</ul>
+<p>Examples of entities that are NOT modeled with PhysicalElements are:</p>
+<ul>
+<li>Property Lines</li>
+<li>Groundwater Elevations</li>
+<li>Construction Superintendents</li>
+<li>Cranes (when used only for resource planning)</li>
+</ul>
+<p>See <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/element-fundamentals'>Element Fundamentals</a> for more information on Elements.</p>
+<h2 class="h-physicaltype">PhysicalType<a id="physicaltype" class="heading-anchor" href="#physicaltype"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>When many PhysicalElements are conceptually identical (such as pumps of the same model) except for a few details (such as location), PhysicalTypes are often used to provide simpler and more efficient modeling.</p>
+<p>PhysicalTypes are often used when a particular PhysicalElement can be ordered from a catalog.
+PhysicalTypes can provide geometry and properties to the PhysicalElements to which they are related.
+Each PhysicalElement can be related to a maximum of one PhysicalType.</p>
+<h2 class="h-physicalmodels">PhysicalModels<a id="physicalmodels" class="heading-anchor" href="#physicalmodels"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Each PhysicalElement is contained in exactly one PhysicalModel. A PhysicalModel is a container of PhysicalElements (and potentially related Elements of other classes) that together model some real-world physical entity. For example, a PhysicalModel might model a campus, a building, a sewer system or a pipe rack.</p>
+<p>See <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/model-fundamentals'>Model Fundamentals</a> for more information on Models.</p>
+<h2 class="h-physical-breakdown">Physical Breakdown<a id="physical-breakdown" class="heading-anchor" href="#physical-breakdown"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Some PhysicalElements have associated &quot;breakdown&quot; PhysicalModels that model the same real world physical entity in finer granularity. For example, a SewerSystem PhysicalElement might be broken down into a SewerSystemModel that contains Pipe PhysicalElements that model the individual pipes in the sewer system.</p>
+<p>See  <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/element-fundamentals'>Element Fundamentals</a> for more information on Model breakdown concepts.</p>
+<h3 class="h-top-of-the-world--physicalpartition">Top of the World - PhysicalPartition<a id="top-of-the-world--physicalpartition" class="heading-anchor" href="#top-of-the-world--physicalpartition"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>At the top of the PhysicalElement-PhysicalModel tree is a PhysicalPartition Element in the RepositoryModel. The PhysicalPartition Element is a child of a Subject Element and starts the modeling of that Subject from a physical perspective.</p>
+<h2 class="h-aggregate-physicalelements">Aggregate PhysicalElements<a id="aggregate-physicalelements" class="heading-anchor" href="#aggregate-physicalelements"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>As an alternate modeling technique PhysicalElement can have child Elements instead of breakdown Models. Elements with child Elements are essentially aggregates. For example, a SteelConnection might be an aggregate of Bolts, Plates and Welds.</p>
+<p>See  <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/element-fundamentals'>Element Fundamentals</a> for more information on aggregates and child Elements.</p>
+<h2 class="h-physical-backbone">Physical Backbone<a id="physical-backbone" class="heading-anchor" href="#physical-backbone"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>As discussed in <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/modeling-with-bis'>Modeling with BIS</a>, there are many entities (physical, functional, analytical, etc.) for each real-world object that can be modeled in a BIS repository. There is a need to coordinate the Elements that model these entities. The strategy of BIS is to relate each of these Elements with the PhysicalElement that models the real world object. The hierarchy of PhysicalElements and PhysicalElements provides the &quot;backbone&quot; to which Elements representing the other modeling perspectives related.</p>
+<!-- Future work:
+1. Explain Physical breakdowns strategy (Site, Facility, System, etc.)...after we lock it down.
+2. Provide example hierarchies
+3. Redo outline. Likely strategy:
+    ## Introduction
+    ## PhysicalElements, PhysicalTypes and PhysicalModels
+    ## Physical Backbone
+    ## Physical Model Hierarchy
+4. Supplement with more figures.
+-->
+<blockquote>
+<p>Next: <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/functional-models-and-elements'>Functional Models and Elements</a></p>
+</blockquote>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#introduction">Introduction</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#physicalelements">PhysicalElements</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#physicaltype">PhysicalType</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#physicalmodels">PhysicalModels</a>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-physical-breakdown" class='title' href="#physical-breakdown"/>
+            <b class='dropdown-menu-title menu-text'>Physical Breakdown</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-physical-breakdown" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#top-of-the-world--physicalpartition">Top of the World - PhysicalPartition</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#aggregate-physicalelements">Aggregate PhysicalElements</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#physical-backbone">Physical Backbone</a>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

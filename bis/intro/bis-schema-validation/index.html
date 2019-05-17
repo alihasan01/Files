@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BIS Schema Validation - iModel.js</title>
+    <meta name="og:title" content="BIS Schema Validation - iModel.js">
+    <meta name="twitter:title" content="BIS Schema Validation - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="bis">BIS</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/" class="table-of-contents-link">Introduction</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/modeling-with-bis" class="table-of-contents-link">Modeling with BIS</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/bis-organization" class="table-of-contents-link">BIS Organization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/fabric-of-the-universe" class="table-of-contents-link">Fabric of the Universe</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/element-fundamentals" class="table-of-contents-link">Element Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/codes" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/elementaspect-fundamentals" class="table-of-contents-link">ElementAspect Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/mixins" class="table-of-contents-link">Mixins</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/model-fundamentals" class="table-of-contents-link">Model Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/relationship-fundamentals" class="table-of-contents-link">Relationship Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schemas-domains" class="table-of-contents-link">Schemas (&#x201C;Domains&#x201D;)</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-hierarchy" class="table-of-contents-link">Information Hierarchy</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/physical-models-and-elements" class="table-of-contents-link">Physical Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/functional-models-and-elements" class="table-of-contents-link">Functional Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/analysis-models-and-elements" class="table-of-contents-link">Analysis Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-models-and-elements" class="table-of-contents-link">Information Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/physical-hierarchy-organization" class="table-of-contents-link">PhysicalModel Hierarchy</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/categories" class="table-of-contents-link">Categories</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schema-customization" class="table-of-contents-link">Schema Customization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/appendix-a-data-evolution-across-time" class="table-of-contents-link">Data Evolution Across Time</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schema-versioning-and-generations" class="table-of-contents-link">Schema Versioning</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/glossary" class="table-of-contents-link">BIS Glossary</a></li>
+    </ul>
+    <!-- TODO: The following are not linked in...?
+    ./domains/*
+    ./intro/appendix-c-bis-domain-design-fundamentals.md
+    ./intro/bis-schema-validation.md
+    ./intro/units.md
+    -->
+    <p>&#xA0;</p>
+    <h3 id="bis naming guidelines">BIS Naming Guidelines</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/rules-and-recommendations" class="table-of-contents-link">Rules and Recommendations</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/special-terms" class="table-of-contents-link">Special Terms</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/summary-of-exceptions" class="table-of-contents-link">Summary of Exceptions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/standard-abbreviations-and-acronyms" class="table-of-contents-link">Abbreviations and Acronyms</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/standard-relationship-strengths-names" class="table-of-contents-link">Relationship &#x201C;Strengths&#x201D;</a></li>
+    </ul>
+    <p>&#xA0;</p>
+    <h3 id="ec">EC</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-schema" class="table-of-contents-link">ECSchema</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-class" class="table-of-contents-link">ECClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-entity-class" class="table-of-contents-link">ECEntityClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-mixin-class" class="table-of-contents-link">ECMixinClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-struct-class" class="table-of-contents-link">ECStructClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-custom-attribute-class" class="table-of-contents-link">ECCustomAttributeClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-relationship-class" class="table-of-contents-link">ECRelationshipClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-property" class="table-of-contents-link">ECProperty</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-custom-attributes" class="table-of-contents-link">ECCustomAttributes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-enumeration" class="table-of-contents-link">ECEnumeration</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/kindofquantity" class="table-of-contents-link">KindOfQuantity</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/property-category" class="table-of-contents-link">PropertyCategory</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/primitive-types" class="table-of-contents-link">PrimitiveTypes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/customattribute-container-types" class="table-of-contents-link">CustomAttribute Container Types</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-unit" class="table-of-contents-link">Unit</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-constant" class="table-of-contents-link">Constant</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-phenomenon" class="table-of-contents-link">Phenomenon</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-unitsystem" class="table-of-contents-link">UnitSystem</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-format" class="table-of-contents-link">Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-name" class="table-of-contents-link">ECName</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/differences-between-ec2-and-ec3" class="table-of-contents-link">Changes Between ECObjects 2 and 3</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/">Base Infrastructure Schema</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/intro/">intro</a> > bis-schema-validation</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/bis%2Fintro%2Fbis-schema-validation.md" target="_blank">Edit this page</a></div>
+            <h1 id="bis schema validation">BIS Schema Validation</h1>
+<p>The variability and potential magnitude of schema rules lead to the need for quality control and long-term maintainability over BIS schemas.</p>
+<h2 class="h-bis-uses-ec-v3">BIS uses EC v3<a id="bis-uses-ec-v3" class="heading-anchor" href="#bis-uses-ec-v3"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>BIS is defined using EC v3. EC v3 is a more clearly defined and rigorous version of the EC that has been used widely in Bentley over the past 10+ years.</p>
+<p>BIS is modularized into a set of interrelated <em>domains</em> (each expressed in a separate ECSchema) that are consistent, coordinated and constrained to maximize the functionality of the entire BIS-based ecosystem. Some flexibility that is available in &quot;raw&quot; EC is not available in BIS. For example, all ECClasses defined in domain ECSchemas (other than BisCore itself) are required to sub-class from some ECClass in BisCore. Other BIS rules are documented at <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/bis-schema-validation'>BIS Schema Validation</a>.</p>
+<p>Unless noted otherwise, all references to &#x201C;schema&#x201D;, &#x201C;class&#x201D; and &#x201C;property&#x201D; in this document refer to ECSchema, ECClass and ECProperty.</p>
+<h2 class="h-validation-rules">Validation Rules<a id="validation-rules" class="heading-anchor" href="#validation-rules"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>BIS Schemas are validated against a set of rules. If one rule is violated, the whole schema will fail validation.</p>
+<p>The rules are broken into the different parts of the Schema they are validated against.</p>
+<h3 class="h-general-schema-rules">General (Schema) Rules<a id="general-schema-rules" class="heading-anchor" href="#general-schema-rules"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-001">BIS-001 <a name="BIS-001"></a><a id="bis-001" class="heading-anchor" href="#bis-001"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>A schema must load and pass EC3.1 spec validation. <strong><em>XXXX NEED LINK</em></strong></p>
+<h4 class="h-bis-002">BIS-002 <a name="BIS-002"></a><a id="bis-002" class="heading-anchor" href="#bis-002"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>A schema&apos;s ECXML version must be at least, 3.1</p>
+<ul>
+<li><a href="http://www.bentley.com/schemas/Bentley.ECXML.3.1">http://www.bentley.com/schemas/Bentley.ECXML.3.1</a></li>
+</ul>
+<h4 class="h-bis-003">BIS-003 <a name="BIS-003"></a><a id="bis-003" class="heading-anchor" href="#bis-003"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>A schema may not reference any EC2 or EC3.0 schemas</p>
+<h4 class="h-bis-004">BIS-004 <a name="BIS-004"></a><a id="bis-004" class="heading-anchor" href="#bis-004"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>A schema must specify a three-part version number</p>
+<ul>
+<li>The version number must be in the format RR.WW.mm (that is, Read.Write.Minor)</li>
+<li>Each version component must be zero-padded to two digits (e.g. 01.02.00)</li>
+</ul>
+<h4 class="h-bis-0">BIS-0 <a name="BIS-005"></a><a id="bis-0" class="heading-anchor" href="#bis-0"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>A schema reference must specify a three-part version number (in the same format described above)</p>
+<h4 class="h-bis-006">BIS-006 <a name="BIS-006"></a><a id="bis-006" class="heading-anchor" href="#bis-006"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>If the schema contains &apos;dynamic&apos; (case-insensitive) in its name it must apply the <strong>CoreCA:DynamicSchema</strong> custom attribute</p>
+<h4 class="h-bis-007">BIS-007 <a name="BIS-007"></a><a id="bis-007" class="heading-anchor" href="#bis-007"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Classes within the same schema cannot have the same display label</p>
+<h4 class="h-bis-008">BIS-008 <a name="BIS-008"></a><a id="bis-008" class="heading-anchor" href="#bis-008"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Classes may not use custom attributes that are deprecated</p>
+<h3 class="h-custom-attribute-classes">Custom Attribute Classes<a id="custom-attribute-classes" class="heading-anchor" href="#custom-attribute-classes"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-400">BIS-400 <a name="BIS-400"></a><a id="bis-400" class="heading-anchor" href="#bis-400"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Custom Attribute classes must not have base classes.</p>
+<h3 class="h-entity-class-rules">Entity Class Rules<a id="entity-class-rules" class="heading-anchor" href="#entity-class-rules"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-600">BIS-600 <a name="BIS-600"></a><a id="bis-600" class="heading-anchor" href="#bis-600"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Entity classes must derive from the BIS hierarchy.</p>
+<h4 class="h-bis-601">BIS-601 <a name="BIS-601"></a><a id="bis-601" class="heading-anchor" href="#bis-601"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Entity classes may only derive from one base Entity class.</p>
+<h4 class="h-bis-602">BIS-602 <a name="BIS-602"></a><a id="bis-602" class="heading-anchor" href="#bis-602"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Entity classes may not inherit a property from more than one base class.</p>
+<h4 class="h-bis-603">BIS-603 <a name="BIS-603"></a><a id="bis-603" class="heading-anchor" href="#bis-603"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>A mixin property cannot override an Entity property inherited from a base Entity class.</p>
+<h4 class="h-bis-604">BIS-604 <a name="BIS-604"></a><a id="bis-604" class="heading-anchor" href="#bis-604"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>If any aspect (ECClass which derives from <strong>ElementMultiAspect</strong>) exists, there must be a relationship that derives from the <strong>ElementOwnsMultiAspects</strong> relationship with this class supported as a target constraint.</p>
+<ul>
+<li>Treated as warning if the schema has the <strong>CoreCA:DynamicSchema</strong> CA applied.</li>
+</ul>
+<h4 class="h-bis-605">BIS-605 <a name="BIS-605"></a><a id="bis-605" class="heading-anchor" href="#bis-605"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>If any aspect (ECClass which derives from <strong>ElementUniqueAspect</strong>) exists, there must be a relationship that derives from the <strong>ElementOwnsUniqueAspect</strong> relationship with this class supported as a target constraint.</p>
+<ul>
+<li>Treated as warning if the schema has the <strong>CoreCA:DynamicSchema</strong> CA applied.</li>
+</ul>
+<h4 class="h-bis-606">BIS-606 <a name="BIS-606"></a><a id="bis-606" class="heading-anchor" href="#bis-606"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Entity classes cannot implement both <strong>bis:IParentElement</strong> and <strong>bis:ISubModeledElement</strong>.</p>
+<h4 class="h-bis-607">BIS-607 <a name="BIS-607"></a><a id="bis-607" class="heading-anchor" href="#bis-607"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Entity classes cannot subclass the following classes:</p>
+<ul>
+<li><strong>bis:PhysicalModel</strong></li>
+<li><strong>bis:SpatialLocationModel</strong></li>
+<li><strong>bis:GroupInformationModel</strong></li>
+<li><strong>bis:InformationRecordModel</strong></li>
+<li><strong>bis:DefinitionModel</strong><ul>
+<li><strong>bis:DictionaryModel</strong> and <strong>bis:RepositoryModel</strong> are the only classes allowed to subclass <strong>bis:DefinitionModel</strong></li>
+</ul>
+</li>
+<li><strong>bis:DocumentListModel</strong></li>
+<li><strong>bis:LinkModel</strong></li>
+</ul>
+<h4 class="h-bis-608">BIS-608 <a name="BIS-608"></a><a id="bis-608" class="heading-anchor" href="#bis-608"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Property overrides cannot change the persistence unit.</p>
+<h4 class="h-bis-609">BIS-609 <a name="BIS-609"></a><a id="bis-609" class="heading-anchor" href="#bis-609"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Subclasses of <strong>bis:Model</strong> cannot have additional properties defined outside of <strong>BisCore</strong>.</p>
+<h4 class="h-bis-610">BIS-610 <a name="BIS-610"></a><a id="bis-610" class="heading-anchor" href="#bis-610"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Entity classes may not subclass deprecated classes</p>
+<h3 class="h-kindofquantities">KindOfQuantities<a id="kindofquantities" class="heading-anchor" href="#kindofquantities"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-700">BIS-700 <a name="BIS-700"></a><a id="bis-700" class="heading-anchor" href="#bis-700"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Kind Of Quantities must not use &apos;PERCENTAGE&apos; or other unitless ratios.</p>
+<h4 class="h-bis-1000">BIS-1000 <a name="BIS-1000"></a><a id="bis-1000" class="heading-anchor" href="#bis-1000"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Kind Of Quantities must use an SI Unit for their persistence unit.</p>
+<h3 class="h-mixin-rules">Mixin Rules<a id="mixin-rules" class="heading-anchor" href="#mixin-rules"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-1100">BIS-1100 <a name="BIS-1100"></a><a id="bis-1100" class="heading-anchor" href="#bis-1100"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Mixin classes may not override an inherited property.</p>
+<h3 class="h-properties">Properties<a id="properties" class="heading-anchor" href="#properties"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-1300">BIS-1300 <a name="BIS-1300"></a><a id="bis-1300" class="heading-anchor" href="#bis-1300"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Properties should not be of type <strong>long</strong>. These properties should be navigation properties if they represent a FK or be of type <strong>int</strong> or <strong>double</strong> if they represent a number.</p>
+<h4 class="h-bis-1301">BIS-1301 <a name="BIS-1301"></a><a id="bis-1301" class="heading-anchor" href="#bis-1301"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Properties within the same class and category cannot have the same display label.</p>
+<h4 class="h-bis-1302">BIS-1302 <a name="BIS-1302"></a><a id="bis-1302" class="heading-anchor" href="#bis-1302"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Properties must use the following supported ExtendedTypes:</p>
+<ul>
+<li><strong>BeGuid</strong></li>
+<li><strong>GeometryStream</strong></li>
+<li><strong>Json</strong></li>
+</ul>
+<h4 class="h-bis-1303">BIS-1303 <a name="BIS-1303"></a><a id="bis-1303" class="heading-anchor" href="#bis-1303"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Properties must not use CustomAttribute <strong>bis:CustomHandledProperty</strong> unless CustomAttribute <strong>bis:ClassHasHandler</strong> is defined on their parent class (<strong>not</strong> derived from a base class).</p>
+<h3 class="h-relationship-classes">Relationship Classes<a id="relationship-classes" class="heading-anchor" href="#relationship-classes"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-1500">BIS-1500 <a name="BIS-1500"></a><a id="bis-1500" class="heading-anchor" href="#bis-1500"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Relationship classes must not use the holding strength.</p>
+<h4 class="h-bis-1501">BIS-1501 <a name="BIS-1501"></a><a id="bis-1501" class="heading-anchor" href="#bis-1501"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Relationship classes must not have a source constraint multiplicity upper bound greater than 1 if the strength is embedding and the direction is forward.</p>
+<h4 class="h-bis-1502">BIS-1502 <a name="BIS-1502"></a><a id="bis-1502" class="heading-anchor" href="#bis-1502"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Relationship classes must not have a target constraint multiplicity upper bound greater than 1 if the strength is embedding and the direction is backward.</p>
+<h4 class="h-bis-1503">BIS-1503 <a name="BIS-1503"></a><a id="bis-1503" class="heading-anchor" href="#bis-1503"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Relationship classes must not have an abstract constraint if there is only one concrete constraint set.</p>
+<h4 class="h-bis-1504">BIS-1504 <a name="BIS-1504"></a><a id="bis-1504" class="heading-anchor" href="#bis-1504"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Relationship classes must not have an <strong>ElementAspect</strong> target constraint (or source constraint if direction is backwards), unless they derive from <strong>ElementOwnsUniqueAspect</strong> or <strong>ElementOwnsMultiAspect</strong></p>
+<h4 class="h-bis-1505">BIS-1505 <a name="BIS-1505"></a><a id="bis-1505" class="heading-anchor" href="#bis-1505"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Embedding relationships should not have &apos;Has&apos; in the class name.</p>
+<h3 class="h-struct-classes">Struct Classes<a id="struct-classes" class="heading-anchor" href="#struct-classes"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<h4 class="h-bis-1700">BIS-1700 <a name="BIS-1700"></a><a id="bis-1700" class="heading-anchor" href="#bis-1700"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<p>Struct classes must not have base classes.</p>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#bis-uses-ec-v3">BIS uses EC v3</a>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-validation-rules" class='title' href="#validation-rules"/>
+            <b class='dropdown-menu-title menu-text'>Validation Rules</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-validation-rules" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-general-schema-rules" class='title' href="#general-schema-rules"/>
+                            <b class='dropdown-menu-title menu-text'>General (Schema) Rules</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-general-schema-rules" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-001">BIS-001</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-002">BIS-002</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-003">BIS-003</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-004">BIS-004</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-0">BIS-0</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-006">BIS-006</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-007">BIS-007</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-008">BIS-008</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-custom-attribute-classes" class='title' href="#custom-attribute-classes"/>
+                            <b class='dropdown-menu-title menu-text'>Custom Attribute Classes</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-custom-attribute-classes" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-400">BIS-400</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-entity-class-rules" class='title' href="#entity-class-rules"/>
+                            <b class='dropdown-menu-title menu-text'>Entity Class Rules</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-entity-class-rules" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-600">BIS-600</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-601">BIS-601</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-602">BIS-602</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-603">BIS-603</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-604">BIS-604</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-605">BIS-605</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-606">BIS-606</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-607">BIS-607</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-608">BIS-608</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-609">BIS-609</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-610">BIS-610</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-kindofquantities" class='title' href="#kindofquantities"/>
+                            <b class='dropdown-menu-title menu-text'>KindOfQuantities</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-kindofquantities" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-700">BIS-700</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1000">BIS-1000</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-mixin-rules" class='title' href="#mixin-rules"/>
+                            <b class='dropdown-menu-title menu-text'>Mixin Rules</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-mixin-rules" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1100">BIS-1100</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-properties" class='title' href="#properties"/>
+                            <b class='dropdown-menu-title menu-text'>Properties</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-properties" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1300">BIS-1300</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1301">BIS-1301</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1302">BIS-1302</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1303">BIS-1303</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-relationship-classes" class='title' href="#relationship-classes"/>
+                            <b class='dropdown-menu-title menu-text'>Relationship Classes</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-relationship-classes" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1500">BIS-1500</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1501">BIS-1501</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1502">BIS-1502</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1503">BIS-1503</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1504">BIS-1504</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1505">BIS-1505</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-struct-classes" class='title' href="#struct-classes"/>
+                            <b class='dropdown-menu-title menu-text'>Struct Classes</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-struct-classes" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#bis-1700">BIS-1700</a>
+                                    </li>
+                            </ul>
+                    </li>
+            </ul>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

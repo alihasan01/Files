@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Schemas (“Domains”) - iModel.js</title>
+    <meta name="og:title" content="Schemas (“Domains”) - iModel.js">
+    <meta name="twitter:title" content="Schemas (“Domains”) - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="bis">BIS</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/" class="table-of-contents-link">Introduction</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/modeling-with-bis" class="table-of-contents-link">Modeling with BIS</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/bis-organization" class="table-of-contents-link">BIS Organization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/fabric-of-the-universe" class="table-of-contents-link">Fabric of the Universe</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/element-fundamentals" class="table-of-contents-link">Element Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/codes" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/elementaspect-fundamentals" class="table-of-contents-link">ElementAspect Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/mixins" class="table-of-contents-link">Mixins</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/model-fundamentals" class="table-of-contents-link">Model Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/relationship-fundamentals" class="table-of-contents-link">Relationship Fundamentals</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schemas-domains" class="table-of-contents-link">Schemas (&#x201C;Domains&#x201D;)</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-hierarchy" class="table-of-contents-link">Information Hierarchy</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/physical-models-and-elements" class="table-of-contents-link">Physical Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/functional-models-and-elements" class="table-of-contents-link">Functional Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/analysis-models-and-elements" class="table-of-contents-link">Analysis Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-models-and-elements" class="table-of-contents-link">Information Models and Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/physical-hierarchy-organization" class="table-of-contents-link">PhysicalModel Hierarchy</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/categories" class="table-of-contents-link">Categories</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schema-customization" class="table-of-contents-link">Schema Customization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/appendix-a-data-evolution-across-time" class="table-of-contents-link">Data Evolution Across Time</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/schema-versioning-and-generations" class="table-of-contents-link">Schema Versioning</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/glossary" class="table-of-contents-link">BIS Glossary</a></li>
+    </ul>
+    <!-- TODO: The following are not linked in...?
+    ./domains/*
+    ./intro/appendix-c-bis-domain-design-fundamentals.md
+    ./intro/bis-schema-validation.md
+    ./intro/units.md
+    -->
+    <p>&#xA0;</p>
+    <h3 id="bis naming guidelines">BIS Naming Guidelines</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/rules-and-recommendations" class="table-of-contents-link">Rules and Recommendations</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/special-terms" class="table-of-contents-link">Special Terms</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/summary-of-exceptions" class="table-of-contents-link">Summary of Exceptions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/standard-abbreviations-and-acronyms" class="table-of-contents-link">Abbreviations and Acronyms</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/naming-guidelines/standard-relationship-strengths-names" class="table-of-contents-link">Relationship &#x201C;Strengths&#x201D;</a></li>
+    </ul>
+    <p>&#xA0;</p>
+    <h3 id="ec">EC</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-schema" class="table-of-contents-link">ECSchema</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-class" class="table-of-contents-link">ECClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-entity-class" class="table-of-contents-link">ECEntityClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-mixin-class" class="table-of-contents-link">ECMixinClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-struct-class" class="table-of-contents-link">ECStructClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-custom-attribute-class" class="table-of-contents-link">ECCustomAttributeClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-relationship-class" class="table-of-contents-link">ECRelationshipClass</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-property" class="table-of-contents-link">ECProperty</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-custom-attributes" class="table-of-contents-link">ECCustomAttributes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-enumeration" class="table-of-contents-link">ECEnumeration</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/kindofquantity" class="table-of-contents-link">KindOfQuantity</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/property-category" class="table-of-contents-link">PropertyCategory</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/primitive-types" class="table-of-contents-link">PrimitiveTypes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/customattribute-container-types" class="table-of-contents-link">CustomAttribute Container Types</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-unit" class="table-of-contents-link">Unit</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-constant" class="table-of-contents-link">Constant</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-phenomenon" class="table-of-contents-link">Phenomenon</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-unitsystem" class="table-of-contents-link">UnitSystem</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-format" class="table-of-contents-link">Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/ec-name" class="table-of-contents-link">ECName</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/ec/differences-between-ec2-and-ec3" class="table-of-contents-link">Changes Between ECObjects 2 and 3</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/">Base Infrastructure Schema</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis/intro/">intro</a> > schemas-domains</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/bis%2Fintro%2Fschemas-domains.md" target="_blank">Edit this page</a></div>
+            <h1 id="schemas (&#x201C;domains&#x201D;)">Schemas (&#x201C;Domains&#x201D;)</h1>
+<!-- TODO
+*AB> Are we ok with identifying the primary author/contact for each chapter?*
+*AB> "Domain" and "Schema" not same thing*
+-->
+<h2 class="h-introduction">Introduction<a id="introduction" class="heading-anchor" href="#introduction"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Domain is a synonym for BIS ECSchema. Domains define the data types for a naturally coherent and limited subject matter. This approach aims to avoid problems and complexities associated with understanding and managing monolithic or very large schemas. It highly depends on coordination and cooperation among multiple BIS domain designers so each sharable concept needed by BIS applications find its appropriate home (i.e. domain) where it will be managed and maintained.</p>
+<p>With Domains being the main concept in BIS behind how the world is divided in, and each domain being small enough to have a clear scope and owner, BIS can also be thought as a modular family of &#x201C;domain&#x201D; schemas.</p>
+<h2 class="h-a-layered-approach">A Layered Approach<a id="a-layered-approach" class="heading-anchor" href="#a-layered-approach"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Domains are <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/bis-organization'>organized into layers</a> based on how generic or specialized the subject matter of the ECSchema in a domain is. The most generic ECSchema in BIS, which lies at the base of this hierarchy &#x2013; depicted in the figure below &#x2013; is BisCore.</p>
+<p>Schemas in any layer may be dependent upon schemas in any lower layer. The layers of the schema hierarchy are intended to avoid circular dependencies while still allowing different domains to interoperate.</p>
+<p><img src=".././media/a-family-of-schemas.png" alt="A Layered Approach"></p>
+<h3 class="h-the-biscore-layer">The BisCore layer<a id="the-biscore-layer" class="heading-anchor" href="#the-biscore-layer"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>BisCore defines the core ECClasses and organizational strategies that all other data types in other domains must follow. Classes such as Model, Element and UniqueAspect are in the BisCore.</p>
+<h3 class="h-the-common-layer">The Common layer<a id="the-common-layer" class="heading-anchor" href="#the-common-layer"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>The next layer in the BIS family of ECSchemas above &#x201C;Core&#x201D; is &#x201C;Common&#x201D;. That is where broad concepts applicable to multiple disciplines are defined. As an example, a Building &#x201C;Common&#x201D; schema may include concepts like stories, but not details of architecture (such as Windows), or structure (such as beams).</p>
+<p>The three layers above &#x201C;Common&#x201D; specialize on a single discipline (in the figure above, sharing the same initial letter), while differentiating in their purpose: &#x201C;Interoperability&#x201D;, &#x201C;Physical&#x201D; and &#x201C;Functional/Analytical&#x201D;.</p>
+<h3 class="h-the-interoperability-layer">The Interoperability layer<a id="the-interoperability-layer" class="heading-anchor" href="#the-interoperability-layer"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>The &#x201C;Interoperability&#x201D; layer aims to contain concepts that other disciplines will need to implement or reference. As an example, an IElectricalLoad mixin defined by the electrical discipline may allow other disciplines to define required electrical service (pumps, elevators, server rooms, etc.).</p>
+<h3 class="h-the-physical-layer">The Physical layer<a id="the-physical-layer" class="heading-anchor" href="#the-physical-layer"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>&#x201C;Physical&#x201D; and &#x201C;Functional/Analytical&#x201D; domains model a particular discipline from different perspectives.</p>
+<p>The Physical layer defines real-world physical entities and closely associated information. Classes such as Pump, Pipe or Roadway are in the Physical layer.</p>
+<h3 class="h-the-functionalanalytical-layer">The Functional/Analytical layer<a id="the-functionalanalytical-layer" class="heading-anchor" href="#the-functionalanalytical-layer"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>This layer defines data types for functional or analytical data towards enabling various schematics and simulations.</p>
+<!-- TODO
+*AB> Add example elements (Vern?).*
+-->
+<h3 class="h-the-application-layer">The Application Layer<a id="the-application-layer" class="heading-anchor" href="#the-application-layer"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>The top layer is for any needed application schema. These schemas are intended to be very small, and contain no data that any other application would need to access. Most data that is currently considered application data will probably be found in the discipline or common layers.</p>
+<h3 class="h-physical-backbone">Physical Backbone<a id="physical-backbone" class="heading-anchor" href="#physical-backbone"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>A key organizational strategy for both the BIS schemas and the organization of data within BIS repositories is the &#x201C;physical backbone&#x201D;. For schema design the physical world is a unifying reality upon which all disciplines can agree when coming to a consensus on how to represent something in BIS.</p>
+<p>Within a BIS repository, the representation of the physical world becomes the framework upon which we can organize other data. All data in BIS repositories is expected to be about or related to physical infrastructure. The physical infrastructure is modeled as a hierarchy and other non-physical information (e.g. Functional or Analytical perspectives) is stored relative to that hierarchy. However, it is expected that in some workflows the physical infrastructure appears after other non-physical data is modeled. Thus, the concept of a &#x201C;physical backbone&#x201D;, albeit not being mandatory from the start of a BIS repository, it should drive the design of the various domains in a discipline.</p>
+<!-- TODO
+*AB> "...is stored relative to that hierarchy..." no longer true?*
+-->
+<h2 class="h-domain-handlers">Domain Handlers<a id="domain-handlers" class="heading-anchor" href="#domain-handlers"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>The BIS schema for a Domain is expected to be useful to a wide variety of clients, designed with the mindset that multiple products, or other domains if needed, will make use of them. Furthermore, as part of the implementation of a BIS Domain, a cross-platform C++ component &#x2013; usually referred to as a &#x201C;Domain Handler&#x201D; &#x2013; is expected to be in place, representing code that understands the BIS ECSchema the Domain is about, is able to read and modify its data in a coherent manner, as well as exposing public APIs providing special functionality to make working with its ECSchema easier and less error-prone.</p>
+<h2 class="h-lifecycle-considerations">Lifecycle Considerations<a id="lifecycle-considerations" class="heading-anchor" href="#lifecycle-considerations"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Disciplines that will be using BIS usually focus on the entire lifecycle of infrastructure assets. That is, conceptual/detailed design, construction, operations and maintenance lifecycle phases. BIS, at its core, does not intent to break up schemas further into lifecycle phases, but rather be agnostic of them. Thus, a domain BIS ECSchema should be designed so that it can accommodate data at various phases.The quality and/or detail of data for any BIS concept modeled by an ECSchema should evolve as it &#x201C;flows&#x201D; through lifecycle phases. No import/export workflows shall be needed.</p>
+<p>Designing BIS schemas backwards (i.e. understanding concepts needed for Operations and Maintenance first, while leaving Conceptual Design last) may help to identify all needed pieces towards achieving a schema that works for the entire lifecycle of the infrastructure of interest.</p>
+<h2 class="h-example">Example<a id="example" class="heading-anchor" href="#example"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Taking Road &amp; Rail disciplines as a example, the following figure depicts how they can be divided into various BIS domains.</p>
+<p><img src=".././media/road-rail-schemas.png" alt="Example"></p>
+<p>At the lowest level, BisCore continues to be most generic domain, layout the framework and foundation for all BIS domains.</p>
+<p>Next layer up &#x2013; Common &#x2013; domains shared with disciplines other than Road &amp; Rail can be found. Those include domains such as Linear-Referencing, Costing and physical Storm water Drainage structures.</p>
+<p>Above Common, discipline-specific layers are introduced. In the case of Road &amp; Rail, domains that introduce fundamental pieces such as Alignments &#x2013; based on Linear-Referencing &#x2013; and Physical Terrain can be found. These in turn serve as the foundation for Physical domains focusing on different structures common in Road and Railways, such as Bridges, Tunnels and Pathways in general.</p>
+<p>Other domains in Road &amp; Rail disciplines focusing on Analytical perspectives included in the figure above include: Structural Analysis (applicable to bridges and tunnels), Traffic Analysis and Storm water Analysis (Hydraulic and Hydraulic simulations).</p>
+<p>Additionally, concepts defined in these Road &amp; Rail domains are needed in other disciplines, such as Site and Building &#x2013; Physical as well as analytical, such as for Site optimization &#x2013; calling for references from these other domains into the appropriate Road &amp; Rail domains depicted below.</p>
+<p>Lastly, several Civil applications can be built on top of all these Road &amp; Rail domains. These Civil applications may focus on specific assets and lifecycle phases in the Road &amp; Rail disciplines. However, BIS ECSchemas referenced by them are expected to be useful across the entire lifecycle of assets in the Road &amp; Rail disciplines.</p>
+<blockquote>
+<p>Next: <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/intro/information-hierarchy'>Information Hierarchy</a></p>
+</blockquote>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#introduction">Introduction</a>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-a-layered-approach" class='title' href="#a-layered-approach"/>
+            <b class='dropdown-menu-title menu-text'>A Layered Approach</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-a-layered-approach" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#the-biscore-layer">The BisCore layer</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#the-common-layer">The Common layer</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#the-interoperability-layer">The Interoperability layer</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#the-physical-layer">The Physical layer</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#the-functionalanalytical-layer">The Functional/Analytical layer</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#the-application-layer">The Application Layer</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#physical-backbone">Physical Backbone</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#domain-handlers">Domain Handlers</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#lifecycle-considerations">Lifecycle Considerations</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#example">Example</a>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

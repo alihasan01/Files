@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Getting Started With iModel.js - iModel.js</title>
+    <meta name="og:title" content="Getting Started With iModel.js - iModel.js">
+    <meta name="twitter:title" content="Getting Started With iModel.js - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="getting started"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started/" class="table-of-contents-link">Getting Started</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started//#1-get-the-tools" class="table-of-contents-link">1. Get the Tools</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started//#2-register-yourself" class="table-of-contents-link">2. Register Yourself</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started//#3-register-your-application" class="table-of-contents-link">3. Register your Application</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started//#4-create-a-sample-project" class="table-of-contents-link">4. Create a Sample Project</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started//#5-get-the-sample-code" class="table-of-contents-link">5. Get the Sample Code</a></li>
+    </ul>
+    <hr>
+    <p>&#xA0;</p>
+    <h3 id="registration dashboard"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./getting-started/registration-dashboard" class="table-of-contents-link">Registration Dashboard</a></h3>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'>Getting Started</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/getting-started%2Findex.md" target="_blank">Edit this page</a></div>
+            <h1 id="getting started with imodel.js">Getting Started With iModel.js</h1>
+<h2 class="h-1-get-the-tools">1. Get the Tools<a id="1-get-the-tools" class="heading-anchor" href="#1-get-the-tools"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Writing an iModel.js application requires the following software:</p>
+<ul>
+<li><a href="https://nodejs.org">Node.js</a> (latest 10.x LTS version)<ul>
+<li>This provides the backend JavaScript runtime.</li>
+<li>The installation also includes the <code>npm</code> command line tool.</li>
+</ul>
+</li>
+<li><a href="https://www.google.com/chrome/">Google Chrome</a><ul>
+<li>This is the preferred tool for developing and debugging frontend JavaScript.</li>
+</ul>
+</li>
+<li><a href="https://git-scm.com/downloads">Git</a><ul>
+<li>This is the source code control system for the iModel.js repositories.</li>
+</ul>
+</li>
+</ul>
+<h3 class="h-suggested-tools">Suggested Tools<a id="suggested-tools" class="heading-anchor" href="#suggested-tools"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>The following tools are very helpful and highly suggested for working with iModel.js:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a><ul>
+<li>This is the recommended editor and debugger for iModel.js applications.</li>
+<li>VS Code also supplies a graphical user interface for working with Git.</li>
+<li>The following VS Code extensions can also be quite helpful:<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">TSLint</a> (use tslint.json from @bentley/build-tools to enforce Bentley coding standards)</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome">Debugger for Chrome</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a> (great tools for using Git inside VSCode)</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">MarkdownLint</a> (for editing documentation)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="h-2-register-yourself">2. Register Yourself<a id="2-register-yourself" class="heading-anchor" href="#2-register-yourself"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>To be able to view/read <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/imodels'>iModel</a> data, you will need access to the <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/imodelhub/'>iModelHub</a>, which requires a Bentley user account.</p>
+<p><strong><a href="https://ims.bentley.com/IMS/Registration">Register here</a></strong></p>
+<p><em>Note: Skip to step 3, if you already have a Bentley User Account.</em></p>
+<h2 class="h-3-register-your-application">3. Register your Application<a id="3-register-your-application" class="heading-anchor" href="#3-register-your-application"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Once you have a Bentley User account, you will need to register the application you are about to create so it can access iModelHub.</p>
+<p><strong><a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./getting-started/registration-dashboard'>Register Here</a></strong></p>
+<p>There are two types of apps you can register:</p>
+<p><a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/app/#interactive-apps'>Interactive Application</a><br>
+An interactive application obtains information from an iModel and presents that information in a user interface.</p>
+<p><a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/app/#agents-and-services'>Agent Application</a><br>
+iModel agents and services are apps that have no interactive user interface.</p>
+<h2 class="h-4-create-a-sample-project">4. Create a Sample Project<a id="4-create-a-sample-project" class="heading-anchor" href="#4-create-a-sample-project"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Once you have a registered application, you will need content to work with. To get you started, Bentley can supply some example content using our &#x201C;iModel Testdrive&#x201D; organization. From the registration page you can create a new project and give access to other developers.</p>
+<p><strong><a href="./registration-dashboard?tab=1">Register Here</a></strong></p>
+<p><em>Note: The &#x201C;iModel Testdrive&#x201D; organization is intended for developer testing only.  See <a href="invalidlink">this page</a> for information about administering a CONNECT project in your own organization.</em></p>
+<h2 class="h-5-get-the-sample-code">5. Get the Sample Code<a id="5-get-the-sample-code" class="heading-anchor" href="#5-get-the-sample-code"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>The Github repositories for the applications described in step 3.</p>
+<p><a href="https://github.com/imodeljs/simple-viewer-app">Simple Viewer App</a><br>
+An example of an <em>interactive application</em> which can:</p>
+<ul>
+<li>Embed an iModel.js viewport into your application to display graphical data.</li>
+<li>Browse iModel catalog and view element properties.</li>
+</ul>
+<p><a href="https://github.com/imodeljs/imodel-query-agent">iModel Query Agent</a><br>
+An example of an <em>agent application</em> which can:</p>
+<ul>
+<li>Listen to changes made to an iModel on the iModelHub.</li>
+<li>Construct a &apos;Change Summary&apos; of useful information.</li>
+</ul>
+<p><br>
+<br>
+<br></p>
+<hr>
+<h3 class="h-recommended-reading">Recommended Reading<a id="recommended-reading" class="heading-anchor" href="#recommended-reading"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<ul>
+<li><a href="http://www.typescriptlang.org/">TypeScript</a><ul>
+<li>iModel.js applications are written in TypeScript and then <em>compiled</em> to plain JavaScript.</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/">Node Package Manager (npm)</a><ul>
+<li><code>npm</code> is used to install and manage dependencies of an iModel.js application.</li>
+<li>The <code>npm</code> <a href="https://docs.npmjs.com/cli/npm">command line</a> and <code>npm</code> <a href="https://docs.npmjs.com/misc/scripts">scripts</a> are used to build and test iModel.js applications.</li>
+</ul>
+</li>
+</ul>
+<h3 class="h-support">Support<a id="support" class="heading-anchor" href="#support"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>Please see the <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/communityresources'>Community Resources</a> page for the best places to get more help.</p>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a data-target="#inner-nav-1-get-the-tools" class='title' href="#1-get-the-tools"/>
+            <b class='dropdown-menu-title menu-text'>1. Get the Tools</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-1-get-the-tools" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#suggested-tools">Suggested Tools</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#2-register-yourself">2. Register Yourself</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#3-register-your-application">3. Register your Application</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#4-create-a-sample-project">4. Create a Sample Project</a>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-5-get-the-sample-code" class='title' href="#5-get-the-sample-code"/>
+            <b class='dropdown-menu-title menu-text'>5. Get the Sample Code</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-5-get-the-sample-code" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#recommended-reading">Recommended Reading</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#support">Support</a>
+                    </li>
+            </ul>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

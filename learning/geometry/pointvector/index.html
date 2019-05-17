@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Point and Vector operations - iModel.js</title>
+    <meta name="og:title" content="Point and Vector operations - iModel.js">
+    <meta name="twitter:title" content="Point and Vector operations - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="the imodel.js library"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/" class="table-of-contents-link">The iModel.js Library</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/frontend/" class="table-of-contents-link">Frontend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/backend/" class="table-of-contents-link">Backend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/common/" class="table-of-contents-link">Common</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/" class="table-of-contents-link">Geometry</a></li>
+    </ul>
+    <hr>
+    <p>&#xA0;</p>
+    <h3 id="helpful links">Helpful links</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/imodelhub/" class="table-of-contents-link">iModelHub</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/wireformat" class="table-of-contents-link">Wire Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/faq" class="table-of-contents-link">Frequently Asked Questions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/guidelines/" class="table-of-contents-link">Guidelines and Tips</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/glossary" class="table-of-contents-link">iModel.js Glossary</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/">Learning</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/">geometry</a> > PointVector</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/learning%2Fgeometry%2FPointVector.md" target="_blank">Edit this page</a></div>
+            <h1 id="point and vector operations">Point and Vector operations</h1>
+<h1 id="notes on compact table notation">Notes on compact table notation</h1>
+<ul>
+<li>Many arguments which might be strongly typed as <code>Point3d</code>, <code>Vector3d</code>, <code>Point3d</code>, <code>Vector3d</code> are weakly typed as <code>XYandZ</code> or <code>XandY</code>.<ul>
+<li>These allow any object that has <code>x</code> and <code>y</code> properties to be passed as inputs.</li>
+</ul>
+</li>
+<li>Many methods have optional result args.<ul>
+<li>The optional arg is NOT indicated here.</li>
+<li>If the caller supplies the optional arg, that preexisting object will be reinitialized.</li>
+<li>If a method is being called many times in a loop, reusing a result can give a significant performance benefit.</li>
+</ul>
+</li>
+</ul>
+<p>Typical names in the tables are:</p>
+<table class="table table-responsive"><tbody><tr>
+<th>name</th>
+<th>implied type</th>
+<th>remarks</th>
+</tr>
+<tr>
+<td>x</td>
+<td>number</td>
+<td>x coordinate</td>
+</tr>
+<tr>
+<td>y</td>
+<td>number</td>
+<td>y coordinate</td>
+</tr>
+<tr>
+<td>z</td>
+<td>number</td>
+<td>z coordinate</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Point3d or Point2d</td>
+<td>point object</td>
+</tr>
+<tr>
+<td>v</td>
+<td>Vector3d or Vector2d</td>
+<td>vector object</td>
+</tr>
+<tr>
+<td>newVector</td>
+<td>Vector3d or Vector2d</td>
+<td>newly created vector object</td>
+</tr>
+<tr>
+<td>basePoint</td>
+<td>Point3d or Point2d</td>
+<td>point object used as origin of the calculation</td>
+</tr>
+<tr>
+<td>targetA, targetB</td>
+<td>Point3d, Vector3d, Point2d, or Vector3d</td>
+<td>point or vector used as target of a vector during the calculation</td>
+</tr>
+</tbody></table><h2 class="h-public-members">public members<a id="public-members" class="heading-anchor" href="#public-members"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>components</td>
+<td>x: number;</td>
+<td>x: number;</td>
+<td>x: number;</td>
+<td>x: number;</td>
+</tr>
+<tr>
+<td></td>
+<td>y: number;</td>
+<td>y: number;</td>
+<td>y: number;</td>
+<td>y: number;</td>
+</tr>
+<tr>
+<td></td>
+<td>z: number;</td>
+<td>z: number;</td>
+<td></td>
+</tr>
+</tbody></table><h2 class="h-static-create-methods">static &quot;create&quot; methods<a id="static-create-methods" class="heading-anchor" href="#static-create-methods"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>create by coordinates</td>
+<td>p = Point3d.create (x,y,z)</td>
+<td>v = Vector3d.create (x,y,z)</td>
+<td>p = Point2d.create (x,y)</td>
+<td>v = Vector2d.create (x,y)</td>
+</tr>
+<tr>
+<td>vectors in principal axis directions, default length 1</td>
+<td></td>
+<td>v = Vector3d.unitX (length:number = 1)</td>
+<td></td>
+<td>v = Vector3d.unitX (length:number = 1)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>v = Vector3d.unitY (length:number = 1)</td>
+<td></td>
+<td>v = Vector3d.unitY (length:number = 1)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>v = Vector3d.unitZ (length:number = 1)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>create all zeros</td>
+<td>p = Point3d.createZero ()</td>
+<td>v = Vector3d.createZero ()</td>
+<td>p = Point2d.createZero ()</td>
+<td>v = Vector2d.createZero ()</td>
+</tr>
+<tr>
+<td>create from variant sources</td>
+<td>`Point3d.createFrom (other: Float64Array</td>
+<td>XAndY</td>
+<td>XAndYAndZ)`</td>
+<td>`Vector3d.createFrom (other: Float64Array</td>
+<td>XAndY</td>
+<td>XAndYAndZ)`</td>
+<td><code>Point2d.createFrom (other: XAndY)</code></td>
+<td>`Vector2d.createFrom (other: XAndY</td>
+<td>Float64Array)`</td>
+</tr>
+<tr>
+<td>create from index in packed xyzxyz..</td>
+<td>p = Point3d.createFromPacked (Float64Array, pointIndex)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>unweight from indexed in packed xyzwxyzw..</td>
+<td>p = Point3d.createFromPackedXYZW (Float64Array, pointIndex)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>create scaled copy</td>
+<td>p = Point3d.createScale (pointA: XYAndZ, scalefactor)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>create sum of 2 weighted</td>
+<td>p = Point3d.createAdd2Scaled (pointA: XYZAndZ, scaleA, pointB: XYAndZ: pointB, scaleB)</td>
+<td>v = Vector3d.createAdd2Scaled (pointA: XYZAndZ, scaleA, pointB: XYAndZ: pointB, scaleB)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>create sum of 2 weighted</td>
+<td></td>
+<td>v = Vector3d.createAdd2ScaledXYZ (ax, ay, az, scaleA, bx, by, bz, scaleB)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>create sum of 3 weighted</td>
+<td>p = Point3d.createAdd3Scaled (pointA: XYZAndZ, scaleA, pointB: XYAndZ: pointB, scaleB, XYAndZ: pointC, scaleC)</td>
+<td>v = Vector3d.createAdd3Scaled (pointA: XYZAndZ, scaleA, pointB: XYAndZ: pointB, scaleB, XYAndZ: pointC, scaleC)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Create from polar radius, angle, and z</td>
+<td></td>
+<td>p = Point3d.createPolar (radius, angle, z)</td>
+<td>p = Point2d.createPolar (radius, angle)</td>
+<td></td>
+</tr>
+<tr>
+<td>Create from spherical radius, xy angle, elevation angle</td>
+<td></td>
+<td>p = Pointd.createSpherical (radius, xyAngle, elevationAngle)</td>
+<td></td>
+</tr>
+</tbody></table><h2 class="h-create-via-instance-methods-on-existing-objects">&quot;create&quot; via instance methods on existing objects<a id="create-via-instance-methods-on-existing-objects" class="heading-anchor" href="#create-via-instance-methods-on-existing-objects"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>vector from start to end</td>
+<td>newVector = point.vectorTo (otherXYAndZ)</td>
+<td>newVector = vector.vectorTo(otherXYandZ)</td>
+<td>newVector = point.vectorTo (otherXAndY)</td>
+<td>newVector = vector.vectorTo (otherXAndY)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vector = Vector3d.createStartEnd (pointA, pointB)</td>
+<td></td>
+<td>vector = Vector2d.createStartEnd (pointA, pointB)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>vector = Vector3d.createStartEndXYZXYZ (ax, ay, az, bx, by, bz)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vector from start to end</td>
+<td>newVector = vector.vectorTo(otherXYandZ)</td>
+<td>newVector = point.vectorTo (otherXYAndZ)</td>
+<td>newVector = vector.vectorTo (otherXAndY)</td>
+<td>newVector = point.vectorTo (otherXAndY)</td>
+</tr>
+<tr>
+<td>clone as same type</td>
+<td>newPoint = p.clone ()</td>
+<td>newVector = v.clone ()</td>
+<td>newPoint = p.clone ()</td>
+<td>newVector = v.clone ()</td>
+</tr>
+<tr>
+<td>unit vector from start to end</td>
+<td>newVector = point.unitVectorTo (otherXYAndZ)</td>
+<td>newVector = point.unitVectorTo (otherXYAndZ)</td>
+<td>newVector = point.unitVectorTo (otherXYAndZ)</td>
+<td>newVector = point.unitVectorTo (otherXAndY)</td>
+</tr>
+<tr>
+<td>vector of specified length from start to end</td>
+<td>newVector = point.scaledVectorTo (otherXYAndZ, length)</td>
+<td>newVector = vector.scaledVectorTo (otherXYAndZ, length)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>clone as strongly type Point3d</td>
+<td>p.cloneAsPoint3d ()</td>
+<td>v.cloneAsPoint3d ()</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vector rotated around axis vector</td>
+<td></td>
+<td>newVector = Vector3d.createRotateVectorAroundVector (oldVector, axisVector, angle)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>divide x,y,z of existing vector by scalar</td>
+<td></td>
+<td>newVector = oldVector.saveDivideOrNull (denominator)</td>
+<td></td>
+<td>newVector = oldVector.safeDivideOrNull (denominator)</td>
+</tr>
+<tr>
+<td>return normalized vector, packaged in an object with length property</td>
+<td></td>
+<td>newVector = oldVector.normalizeWithLength (): {v: vector3d, mag: number}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>return scaled copy of instance</td>
+<td></td>
+<td>newVector = oldVector.scale (scaleFactor)</td>
+<td></td>
+<td>newVector = oldVector.scale (scaleFactor)</td>
+</tr>
+<tr>
+<td>return copy scaled to specific length</td>
+<td></td>
+<td>newVector = oldVector.scaleToLength (newLength)</td>
+<td></td>
+<td>newVector = oldVector.scaleToLength (newLength)</td>
+</tr>
+<tr>
+<td>return normalized vector</td>
+<td></td>
+<td>`newVector = oldVector.normalize () : Vector3d</td>
+<td>undefined`</td>
+<td></td>
+<td>`newVector = oldVector.normalize () : Vector2d</td>
+<td>undefined`</td>
+</tr>
+<tr>
+<td>attempt to normalize in place.  If near zero length, leave unchanged and return <code>false</code></td>
+<td></td>
+<td>vector.normalizeInPlace () : boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>clone negated</td>
+<td></td>
+<td>newVector = oldVector.negate ()</td>
+<td></td>
+<td>newVector = oldVector.negate ()</td>
+</tr>
+<tr>
+<td>vector rotated 90 degrees COUNERCLOCKWISE in XY plane, preserving z</td>
+<td></td>
+<td>newVector = oldVector.rotate99CCWXY ()</td>
+<td></td>
+<td>newVector = oldVector.rotate99CCWXY ()</td>
+</tr>
+<tr>
+<td>vector rotated 90 degrees CLOCKWISE in XY plane, preserving z</td>
+<td></td>
+<td></td>
+<td></td>
+<td>newVector = oldVector.rotate99CWXY ()</td>
+</tr>
+<tr>
+<td>vector rotated by angle in XY plane, preserving z</td>
+<td></td>
+<td>newVector = oldVector.rotateXY ()</td>
+<td></td>
+<td>newVector = oldVector.rotateXY ()</td>
+</tr>
+<tr>
+<td>unit vector rotated 90 degrees in xy plane</td>
+<td></td>
+<td>newVector = oldVector.unitPerpendicularXY ()</td>
+<td></td>
+<td>newVector = oldVector.unitPerpendicularXY ()</td>
+</tr>
+<tr>
+<td>vector rotated 90 degrees towards a target vector.  Rotation is in the plane containing both inputs.</td>
+<td></td>
+<td>newVector = oldVector.rotate90Towards ()</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vector rotated 90 degrees around an axis vector.</td>
+<td></td>
+<td>newVector = oldVector.rotate90Around ()</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>vector to the intersection of offsets</td>
+<td></td>
+<td></td>
+<td></td>
+<td>`vector = Vector2d.createOffsetBisector (unitPerpendicularA, unitPerpendicularB, offsetDistance) :Vector2d</td>
+<td>undefined`</td>
+</tr>
+</tbody></table><h2 class="h-create-by-interpolation-and-addition">create by Interpolation and addition<a id="create-by-interpolation-and-addition" class="heading-anchor" href="#create-by-interpolation-and-addition"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>interpolate a point between instance and target</td>
+<td>newPoint = p.interpolate (fraction, target)</td>
+<td>newVector = v.interpolate (fraction, target)</td>
+<td>newPoint = basePoint.interpolate (fraction, target)</td>
+<td>newVector = v.interpolate (fraction, target)</td>
+</tr>
+<tr>
+<td>ray with origin interpolated between points, vector from point to point</td>
+<td>newPoint = basePoint.interpolatePointAndTangent (fraction, target)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>interpolate a point with distinct fractions for each x,y,z direction</td>
+<td>newPoint = basePoint.interpolateXYZ (fractionX, fractionY, fractionZ, target)</td>
+<td></td>
+<td>newPoint = basePoint.interpolateXY (fractionX, fractionY, target)</td>
+<td></td>
+</tr>
+<tr>
+<td>fractional interpolate, then move perpendicular by a fraction of the XY rotation of the same vector</td>
+<td>newPoint = p.interpolatePerpendicularXY (fraction, target, perpendicularFraction)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>from instance point, move a forwardFraction of vector, and perpendicularFraction of vector rotated 90 CCW</td>
+<td></td>
+<td></td>
+<td>newPoint = oldPoint.addForwardAndLeft (forwardFraction, leftFraction, vector)</td>
+<td></td>
+</tr>
+<tr>
+<td>from instance point, move a forwardFraction of towards target, and perpendicularFraction of vector rotated 90 CCW</td>
+<td></td>
+<td></td>
+<td>newPoint = oldPoint.addForwardAndLeft (forwardFraction, leftFraction, targetPoint)</td>
+<td></td>
+</tr>
+<tr>
+<td>new point/vector by adding a vector</td>
+<td>newPoint = basePoint.plus (vector: XYAndZ)</td>
+<td>newVector = v.plus (vector: XYAndZ)</td>
+<td>newPoint = basePoint.plus (vector: XAndY)</td>
+<td>newVector = v.plus (vector: XAndY)</td>
+</tr>
+<tr>
+<td>new point by adding x,y,z args</td>
+<td>newPoint = basePoint.plusXYZ (x,y,z)</td>
+<td></td>
+<td>newPoint = basePoint.plusXY (x,y)</td>
+<td></td>
+</tr>
+<tr>
+<td>new point/vector by subtracting a vector</td>
+<td>newPoint = basePoint.minus (vector: XYAndZ)</td>
+<td>newVector = v.minus (vector: XYAndZ)</td>
+<td>newPoint = basePoint.minus (vector: XAndY)</td>
+<td>newVector = v.minus (vector: XAndY)</td>
+</tr>
+<tr>
+<td>new point/vector by adding scaled vector(s)</td>
+<td>newPoint = basePoint.plusScaled (vector: XYAndZ, scale)</td>
+<td>newVector = v.plusScaled (vector: XYAndZ, scale)</td>
+<td>newPoint = basePoint.plusScaled (vector: XAndY, scale)</td>
+<td>newVector = baseVector.plusScaled (vector: XAndY, scale)</td>
+</tr>
+<tr>
+<td></td>
+<td>newPoint = basePoint.plus2Scaled (vector: XYAndZ, scale1, vector2: XYAndZ, scale2)</td>
+<td>newVector = baseVector.plus2Scaled (vector: XYAndZ, scale1, vector2: XYAndZ, scale2)</td>
+<td>newPoint = basePoint.plus2Scaled (vector: XAndY, scale1, vector2: XAndY, scale2)</td>
+<td>newVector = baseVector.plus2Scaled (vector: XAndY, scale1, vector2: XAndY, scale2)</td>
+</tr>
+<tr>
+<td></td>
+<td>newPoint = basePoint.plus3Scaled (vector: XYAndZ, scale1, vector2: XYAndZ, scale2, vector3: XYAndZ, scale3)</td>
+<td>newVector = v.plus3Scaled (vector: XYAndZ, scale1, vector2: XYAndZ, scale2, vector3: XYAndZ, scale3)</td>
+<td>newPoint = basePoint.plus3Scaled (vector: XAndY, scale1, vector2: XAndY, scale2, vector3: XAndY, scale3)</td>
+<td>newVector = baseVector.plus3Scaled (vector: XAndY, scale1, vector2: XAndY, scale2, vector3: XAndY, scale3)</td>
+</tr>
+</tbody></table><h2 class="h-dot-cross-and-triple-products">Dot, Cross and triple products<a id="dot-cross-and-triple-products" class="heading-anchor" href="#dot-cross-and-triple-products"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>dot product of two vectors</td>
+<td></td>
+<td>value = vectorA.dotProduct (vectorB) : number</td>
+<td></td>
+<td>value = vectorA.dotProduct (vectorB) : number</td>
+</tr>
+<tr>
+<td>dot product of XY parts of two vectors</td>
+<td></td>
+<td>value = vectorA.dotProductXY (vectorB) : number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dot product with vector given as x,y,z</td>
+<td></td>
+<td>value = vectorA.dotProductXYZ (x,y,z) : number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cross product of two vectors</td>
+<td></td>
+<td>newVector = Vector3d.createCrossProduct (vectorA, vectorB) : Vector3d</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>value = vectorA.crossProduct (vectorB):number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cross product of XY parts of two vectors</td>
+<td></td>
+<td>value = vectorA.crossProductXY (vectorB) : number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>normalized cross product (or undefined if vectorA and vectorB are parallel)</td>
+<td></td>
+<td>`newVector = vectorA.unitCrossProduct (vectorB) : Vector3d</td>
+<td>undefined`</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cross product scaled to given length (undefined if vectorA and vectorB are parallel)</td>
+<td></td>
+<td>`newVector = vectorA.sizedCrossProduct (vectorB, length) : Vector3d</td>
+<td>undefined`</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>normalized cross product (or use x,y,z for default if vectorA and vectorB are parallel)</td>
+<td></td>
+<td><code>newVector = vectorA.unitCrossProductWithDefault (vectorB, x, y, z) : Vector3d</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cross product of two vectors</td>
+<td>newVector = p.crossProductToPoints (targetA, targetB) : Vector3d</td>
+<td>newVector = Vector3d.createCrossProductToPoints (basePoint, targetA, targetB )</td>
+<td>value = basePoint.crossProductToPoints (targetA, targetB) : number</td>
+<td></td>
+</tr>
+<tr>
+<td>cross product with vector between input points</td>
+<td></td>
+<td>value = vectorA.crossProductStartEnd (startPoint, endPoint) : Vector3d</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cross product with vector between input points, using only xy parts</td>
+<td></td>
+<td>value = vectorA.crossProductStartEndXY (startPoint, endPoint) : Vector3d</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cross product of vectors from instance point to 2 targets</td>
+<td>value = p.crossProductToPointsXY (targetA, targetB)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(scalar) triple product of three vectors</td>
+<td>value = p.tripleProductToPoints () : number</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(scalar) triple product of three vectors</td>
+<td></td>
+<td>value = vectorA.tripleProduct (vectorB, vectorC) : number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project instance onto a line segment, return fractional postition</td>
+<td>fraction = spacePoint.fractionOfProjectionToLine (pointA, pointB) : number</td>
+<td>fraction = spaceVector.fractionOfProjectionToVector(targetVector) : number</td>
+<td>fraction = spacePoint.fractionOfProjectionToLine (pointA, pointB) : number</td>
+<td>fraction = spaceVector.fractionOfProjectionToVector(targetVector) : number</td>
+</tr>
+<tr>
+<td>in the instance, accumulate crossproduct of vectors from (baseX. baseY, baseZ) to (ax, ay, az) and (bx, by, bz)</td>
+<td></td>
+<td>vector.addCrossProductToTargetsInPlace (baseX, baseY, baseZ, ax, ay, az, bx, by, bz)</td>
+<td></td>
+</tr>
+<tr>
+<td>dot product of vectors from instance to 2 targets</td>
+<td>a = basePoint.dotVectorsToTargets (pointA, pointB)</td>
+<td></td>
+<td>a = basePoint.dotVectorsToTargets (pointA,</td>
+</tr>
+</tbody></table><p>pointB) | |
+| dot product of instance vector with vector from startPoint to endPoint.  | | a = vector.dotProductStartEnd (startPoint, endPoint)  : number| | a = vector.dotProductStartEnd (startPoint, endPoint)  : number |</p>
+<p>| dot product of instance vector with vector from startPoint to endPoint.  endPoint given as x,y,z,w to be unweighted. returns zero if weighth is zero.| | a = vector.dotProductStartEndXYZW (startPoint, x,y,x,z)  : number| | | |
+| squared magnitude of cross product | | value = vectorA.crossProductMagnitudeSquared (vectorB) | | |
+| magnitude of cross product | | value = vectorA.crossProductMagnitude (vectorB) | | |</p>
+<h2 class="h-angles-between-vectors">Angles between vectors<a id="angles-between-vectors" class="heading-anchor" href="#angles-between-vectors"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>Methods that return bare radians have <em>radians</em> in the method name.</li>
+<li>Methods without specific <em>radians</em> indication return a (strongly typed) <code>Angle</code> object that can be queried for <code>degrees</code> or <code>radians</code>.</li>
+</ul>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>angle between vectors, 3D is &quot;in their plane&quot; and unsigned.  2D is in XY plane and signed</td>
+<td></td>
+<td>angle = vectorA.angleTo (vectorB) : Angle</td>
+<td></td>
+<td>angle = vectorA.angleTo (vectorB) : Angle</td>
+</tr>
+<tr>
+<td>angle between vectors, in their plane but using outOfPlaneVector to define top and bottom. <code>outOfPlane</code> is <em>not</em> necessarily a perpendicular.</td>
+<td></td>
+<td>angle = vectorA.signedAngleTo (vectorB, outOfPlaneVector) : Angle</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>radians between vectors, in their plane but using outOfPlaneVector to define top and bottom. <code>outOfPlane</code> is <em>not</em> necessarily a perpendicular.</td>
+<td></td>
+<td>angle = vectorA.signedRadiansTo (vectorB, outOfPlaneVector) : number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>angle between vectors, as viewed in xy plane</td>
+<td></td>
+<td>angle = vectorA.angleToXY (vectorB) : Angle</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>angle between vectors, as viewed in plane perpendicular to planeNormal</td>
+<td></td>
+<td>angle = vectorA.planrRadiansTo (vectorB, planeNormal) : number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>angle = vectorA.planrAngleTo (vectorB, planeNormal) : Angle</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>parallel vector test</td>
+<td></td>
+<td>vectorA.isParallelTo (vectorB, oppositeIsParallel : boolean = false, returValueIfAnInputIsZero : boolean = false)</td>
+<td></td>
+<td>vectorA.isParallelTo (vectorB, oppositeIsParallel : boolean = false)</td>
+</tr>
+<tr>
+<td>perpendicular vector test</td>
+<td></td>
+<td>vectorA.isPerpendicularTo (vectorB, returValueIfAnInputIsZero : boolean = false)</td>
+<td></td>
+<td>vectorA.isPerpendicularTo (vectorB)</td>
+</tr>
+</tbody></table><h2 class="h-in-place-updates-instance-methods">in-place updates (instance methods)<a id="in-place-updates-instance-methods" class="heading-anchor" href="#in-place-updates-instance-methods"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>set coordinates from number args</td>
+<td>p.set (x,y,z)</td>
+<td>v.set(x,y,z)</td>
+<td>p.set(x,y)</td>
+<td>v.set (x,y)</td>
+</tr>
+<tr>
+<td>set coordinates to zero</td>
+<td>p.setZero ()</td>
+<td>v.setZero ()</td>
+<td>p.setZero</td>
+<td>v.setZero ()</td>
+</tr>
+<tr>
+<td>set coordinates as vector between inputs</td>
+<td></td>
+<td>v.setStartEnd (basePoint, targetPoint)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>set coordinates from other objects</td>
+<td>`p.setFrom (other: Float64Array</td>
+<td>XAndY</td>
+<td>XAndYAndZ)`</td>
+<td>`v.setFrom (other: Float64Array</td>
+<td>XAndY</td>
+<td>XAndYAndZ)`</td>
+<td>p.setFrom (other?: XAndY)</td>
+<td>v.setFrom (other?: XAndY)</td>
+</tr>
+<tr>
+<td>scale coordinates</td>
+<td>p.scaleInPlace (scaleFactor)</td>
+<td>v.scaleInPlace (scaleFactor)</td>
+<td></td>
+</tr>
+</tbody></table><h2 class="h-unary-queries-instance-methods">unary queries (instance methods)<a id="unary-queries-instance-methods" class="heading-anchor" href="#unary-queries-instance-methods"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>category</th>
+<th>Point3d</th>
+<th>Vector3d</th>
+<th>Point2d</th>
+<th>Vector2d</th>
+</tr>
+<tr>
+<td>metric zero test on all components</td>
+<td>p.isAlmostZero ()</td>
+<td>v.isAlmostZero ()</td>
+<td>p.isAlmostZero ()</td>
+<td>v.isAlmostZero ()</td>
+</tr>
+<tr>
+<td>largest absolute component (number)</td>
+<td>p.maxAbs ()</td>
+<td>v.maxAbs ()</td>
+<td>p.maxAbs ()</td>
+<td>v.maxAbs ()</td>
+</tr>
+<tr>
+<td>magnitude</td>
+<td>p.magnitude ()</td>
+<td>v.magnitude ()</td>
+<td>p.magnitude ()</td>
+<td>v.magnitude ()</td>
+</tr>
+<tr>
+<td>magnitude squared</td>
+<td>p.magnitudeSquared ()</td>
+<td>v.magnitudeSquared ()</td>
+<td>p.magnitudeSquared ()</td>
+<td>v.magnitudeSquared ()</td>
+</tr>
+<tr>
+<td>magnitude ignoring z</td>
+<td>p.magnitudeXY ()</td>
+<td>v.magnitudeXY ()</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>magnitude squared ignoring z</td>
+<td>p.magnitudeSquaredXY ()</td>
+<td>v.magnitudeSquaredXY ()</td>
+<td></td>
+</tr>
+</tbody></table><h2 class="h-property-verification">property verification<a id="property-verification" class="heading-anchor" href="#property-verification"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>These are static methods on the XYZ class.  Hence they are inherited by Point3d and Vector3d. Their inputs are raw objects which may have x,y,z as properties but are not full-fledged Point3d, Vector3d, Point2d, Vector2d objects.</p>
+<table class="table table-responsive"><tbody><tr>
+<th>condition</th>
+<th>method</th>
+</tr>
+<tr>
+<td>has x and y properties (z not tested)</td>
+<td>XYZ.isXAndY (anyObject)</td>
+</tr>
+<tr>
+<td>has z propertiy</td>
+<td>XYZ.hasZ (anyObject)</td>
+</tr>
+<tr>
+<td>has x, y and z properties (z not tested)</td>
+<td>XYZ.isXYAndZ (anyObject)</td>
+</tr>
+</tbody></table><h2 class="h-binary-queriesinstance-methods">binary queries(instance methods)<a id="binary-queriesinstance-methods" class="heading-anchor" href="#binary-queriesinstance-methods"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>(methods that take the &quot;other&quot; point or vector as direct numbers in the call list are considered &quot;binary&quot; for this table.)
+| category | Point3d | Vector3d | Point2d | Vector2d |
+|---|---|---|---|---|
+| near equality with metric tolerance | p.isExactEqual (otherXYAndZ) | v.isExactEqual (otherXYAndZ) | p.isExactEqual (otherXAndY) | v.isExactEqual (otherXAndY) |
+| near equality with metric tolerance, unrolled xyz inputs | p.isAlmostEqualXYZ (x,y,z) | v.isAlmostEqual (x,y,z) |  | |
+| near equality with metric tolerance, unrolled xy inputs | p.isAlmostEqualXYZ (x,y) | v.isAlmostEqual (x,y) |  | |
+| exact equality | p.isAlmostEqual (otherXYAndZ) | v.isAlmostEqual (otherXYAndZ) | p.isAlmostEqual (otherXAndY) | v.isAlmostEqual (otherXAndY) |
+| distance between | p.distance (otherXYAndZ) | v.distance (otherXYAndZ) | p.distance (otherXAndY) | v.distance (otherXAndY) |
+| squared distance between | p.distanceSquared (otherXYAndZ) | v.distanceSquared (otherXYAndZ) | p.distanceSquared (otherXAndY) | v.distanceSquared (otherXAndY) |
+| distance between, ignore z | p.distanceXY (otherXYAndZ) | v.distanceXY (otherXYAndZ) |
+| squared distance between, ignore z | p.distanceSquaredXY (otherXYAndZ) | v.distanceSquaredXY (otherXYAndZ) |
+| max component difference | p.maxDiff (otherXYAndZ) | v.maxDiff (otherXYAndZ) | p.maxDiff (otherXAndY) | v.maxDiff (otherXAndY) |</p>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#public-members">public members</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#static-create-methods">static "create" methods</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#create-via-instance-methods-on-existing-objects">"create" via instance methods on existing objects</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#create-by-interpolation-and-addition">create by Interpolation and addition</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#dot-cross-and-triple-products">Dot, Cross and triple products</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#angles-between-vectors">Angles between vectors</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#in-place-updates-instance-methods">in-place updates (instance methods)</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#unary-queries-instance-methods">unary queries (instance methods)</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#property-verification">property verification</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#binary-queriesinstance-methods">binary queries(instance methods)</a>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

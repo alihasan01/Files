@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CurvePrimitive - iModel.js</title>
+    <meta name="og:title" content="CurvePrimitive - iModel.js">
+    <meta name="twitter:title" content="CurvePrimitive - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="the imodel.js library"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/" class="table-of-contents-link">The iModel.js Library</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/frontend/" class="table-of-contents-link">Frontend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/backend/" class="table-of-contents-link">Backend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/common/" class="table-of-contents-link">Common</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/" class="table-of-contents-link">Geometry</a></li>
+    </ul>
+    <hr>
+    <p>&#xA0;</p>
+    <h3 id="helpful links">Helpful links</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/imodelhub/" class="table-of-contents-link">iModelHub</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/wireformat" class="table-of-contents-link">Wire Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/faq" class="table-of-contents-link">Frequently Asked Questions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/guidelines/" class="table-of-contents-link">Guidelines and Tips</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/glossary" class="table-of-contents-link">iModel.js Glossary</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/">Learning</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/">geometry</a> > IModelJsonGeometrySchema</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/learning%2Fgeometry%2FIModelJsonGeometrySchema.md" target="_blank">Edit this page</a></div>
+            <h2 class="h-curveprimitive">CurvePrimitive<a id="curveprimitive" class="heading-anchor" href="#curveprimitive"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>constructor</th>
+<th>remarks</th>
+<th>json</th>
+</tr>
+<tr>
+<td>LineSegment3d.create</td>
+<td>Simple line segment</td>
+<td><code>{&quot;lineSegment&quot;:[[0,0,0],[4,0,0]]}</code></td>
+</tr>
+<tr>
+<td>LineString3d.create</td>
+<td>linestring by points</td>
+<td><code>{&quot;lineString&quot;:[[0,0,0],[4,0,0],[4,4,0],[0,4,0]]}</code></td>
+</tr>
+<tr>
+<td>Arc3d.createCircularStartMiddleEnd</td>
+<td>arc passing through 3 points</td>
+<td><code>{&quot;arc&quot;:{&quot;center&quot;:[2,2.000000000000001,0],&quot;vectorX&quot;:[-2,-2.000000000000001,0],&quot;vectorY&quot;:[2.000000000000001,-2,0],&quot;sweepStartEnd&quot;:[0,179.99999999999997]}}</code></td>
+</tr>
+<tr>
+<td>Arc3d.create</td>
+<td>circular arc</td>
+<td><code>{&quot;arc&quot;:{&quot;center&quot;:[0,0,0],&quot;vectorX&quot;:[4,0,0],&quot;vectorY&quot;:[0,4,0],&quot;sweepStartEnd&quot;:[-45,90]}}</code></td>
+</tr>
+<tr>
+<td>Arc3d.create</td>
+<td>elliptic arc</td>
+<td><code>{&quot;arc&quot;:{&quot;center&quot;:[0,0,0],&quot;vectorX&quot;:[4,0,0],&quot;vectorY&quot;:[0,12,0],&quot;sweepStartEnd&quot;:[-45,190]}}</code></td>
+</tr>
+<tr>
+<td>BSplineCurve3d.create</td>
+<td>curve by poles</td>
+<td><code>{&quot;bcurve&quot;:{&quot;points&quot;:[[0,0,0],[4,0,0],[4,4,0],[0,4,0]],&quot;knots&quot;:[0,0,0,0,1,1,1,1],&quot;closed&quot;:false,&quot;order&quot;:4}}</code></td>
+</tr>
+</tbody></table><h2 class="h-curvecollections">CurveCollections<a id="curvecollections" class="heading-anchor" href="#curvecollections"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>constructor</th>
+<th>remarks</th>
+<th>json</th>
+</tr>
+<tr>
+<td>Path.create</td>
+<td>path with line, arc, line</td>
+<td><code>{&quot;path&quot;:[{&quot;lineSegment&quot;:[[4,4,0],[4,0,0]]},{&quot;arc&quot;:{&quot;center&quot;:[0,0,0],&quot;vectorX&quot;:[4,0,0],&quot;vectorY&quot;:[0,4,0],&quot;sweepStartEnd&quot;:[0,180]}},{&quot;lineSegment&quot;:[[-4,4.898587196589413e-16,0],[0,0,0]]}]}</code></td>
+</tr>
+<tr>
+<td>Loop.create</td>
+<td>loop with semicircle and diameter segment</td>
+<td><code>{&quot;loop&quot;:[{&quot;arc&quot;:{&quot;center&quot;:[0,0,0],&quot;vectorX&quot;:[4,0,0],&quot;vectorY&quot;:[0,4,0],&quot;sweepStartEnd&quot;:[0,180]}},{&quot;lineSegment&quot;:[[-4,4.898587196589413e-16,0],[4,0,0]]}]}</code></td>
+</tr>
+<tr>
+<td>ParityRegion.create</td>
+<td>rectangle with semicirular hole</td>
+<td><code>{&quot;parityRegion&quot;:[{&quot;loop&quot;:[{&quot;lineString&quot;:[[-4.5,-4.5,0],[4.5,-4.5,0],[4.5,4.5,0],[-4.5,4.5,0],[-4.5,-4.5,0]]}]},{&quot;loop&quot;:[{&quot;arc&quot;:{&quot;center&quot;:[0,0,0],&quot;vectorX&quot;:[4,0,0],&quot;vectorY&quot;:[0,4,0],&quot;sweepStartEnd&quot;:[0,180]}},{&quot;lineSegment&quot;:[[-4,4.898587196589413e-16,0],[4,0,0]]}]}]}</code></td>
+</tr>
+</tbody></table><h2 class="h-solidprimitive-types">SolidPrimitive types<a id="solidprimitive-types" class="heading-anchor" href="#solidprimitive-types"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>constructor</th>
+<th>remarks</th>
+<th>json</th>
+</tr>
+<tr>
+<td>Sphere.createCenterRadius(center, radius)</td>
+<td>full sphere</td>
+<td><code>{&quot;sphere&quot;:{&quot;center&quot;:[1,1,0],&quot;radius&quot;:3}}</code></td>
+</tr>
+<tr>
+<td>Cone.createAxisPoints(centerA, centerB, radiusA, radiusB, capped)</td>
+<td>full sphere</td>
+<td><code>{&quot;cone&quot;:{&quot;capped&quot;:true,&quot;start&quot;:[-1,1,0],&quot;end&quot;:[3,2,0],&quot;startRadius&quot;:1.5,&quot;endRadius&quot;:2,&quot;xyVectors&quot;:[[-0.24253562503633297,0.9701425001453319,0],[0,0,1]]}}</code></td>
+</tr>
+<tr>
+<td>Box.createDgnBox(cornerA, xVector, yVector, baseX, baseY, topX, topY, capped)</td>
+<td>box with sides slanting inward</td>
+<td><code>{&quot;box&quot;:{&quot;baseOrigin&quot;:[-1,1,0],&quot;baseX&quot;:4,&quot;baseY&quot;:3,&quot;capped&quot;:true,&quot;topOrigin&quot;:[-1,2,4],&quot;topY&quot;:2}}</code></td>
+</tr>
+<tr>
+<td>TorusPipe.createInFrame(frame, majorRadius, minorRadius, sweep, capped)</td>
+<td>90 degree elbos</td>
+<td><code>{&quot;torusPipe&quot;:{&quot;center&quot;:[1,1,1],&quot;majorRadius&quot;:3,&quot;minorRadius&quot;:1,&quot;xyVectors&quot;:[[0,1,0],[-0.8320502943378437,0,0.5547001962252291]],&quot;sweepAngle&quot;:90,&quot;capped&quot;:true}}</code></td>
+</tr>
+<tr>
+<td>LinearSweep.create(contour, sweepVector, capped)</td>
+<td>swept hexagon</td>
+<td><code>{&quot;linearSweep&quot;:{&quot;contour&quot;:{&quot;loop&quot;:[{&quot;lineString&quot;:[[2,0,0],[1.5,0.8660254037844386,0],[0.5,0.8660254037844387,0],[0,0,0],[0.5,-0.8660254037844385,0],[1.5,-0.866025403784439,0],[2,0,0]]}]},&quot;capped&quot;:true,&quot;vector&quot;:[0,0,4]}}</code></td>
+</tr>
+<tr>
+<td>RotationalSweep.create(contour, axisOfRotation, sweepAngle, capped)</td>
+<td>hexagon rotated</td>
+<td><code>{&quot;rotationalSweep&quot;:{&quot;axis&quot;:[0,1,0],&quot;contour&quot;:{&quot;loop&quot;:[{&quot;lineString&quot;:[[2,0,0],[1.5,0.8660254037844386,0],[0.5,0.8660254037844387,0],[0,0,0],[0.5,-0.8660254037844385,0],[1.5,-0.866025403784439,0],[2,0,0]]}]},&quot;capped&quot;:true,&quot;center&quot;:[-1,0,0],&quot;sweepAngle&quot;:135}}</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table><h2 class="h-isolated-point">Isolated point<a id="isolated-point" class="heading-anchor" href="#isolated-point"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<table class="table table-responsive"><tbody><tr>
+<th>class name</th>
+<th>property name</th>
+<th>Minimal Example</th>
+</tr>
+<tr>
+<td>CoordinateXYZ</td>
+<td>isolated point</td>
+<td><code>{&quot;point&quot;:[0,0,0]}</code></td>
+</tr>
+</tbody></table>
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#curveprimitive">CurvePrimitive</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#curvecollections">CurveCollections</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#solidprimitive-types">SolidPrimitive types</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#isolated-point">Isolated point</a>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

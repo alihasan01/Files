@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DbResult - bentleyjs-core</title>
+    <meta name="og:title" content="DbResult - bentleyjs-core">
+    <meta name="twitter:title" content="DbResult - bentleyjs-core">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h2 id="imodel.js packages">iModel.js Packages</h2>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/&apos;&gt;imodeljs-frontend&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/" class="table-of-contents-link">imodeljs-frontend</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/imodelapp/" class="table-of-contents-link">IModelApp</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/imodelconnection/" class="table-of-contents-link">IModelConnection</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/elementstate/" class="table-of-contents-link">ElementState</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/modelstate/" class="table-of-contents-link">ModelState</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/tools/" class="table-of-contents-link">Tools</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/views/" class="table-of-contents-link">Views</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/locatingelements/" class="table-of-contents-link">Locating Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/accudraw/" class="table-of-contents-link">AccuDraw</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/notifications/" class="table-of-contents-link">Notifications</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/selectionset/" class="table-of-contents-link">Selection Set</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/rendering/" class="table-of-contents-link">Rendering</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-frontend/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/&apos;&gt;imodeljs-common&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/" class="table-of-contents-link">imodeljs-common</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/wireformats/" class="table-of-contents-link">Wire Formats</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/codes/" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/geometry/" class="table-of-contents-link">Geometry</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/views/" class="table-of-contents-link">Views</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/symbology/" class="table-of-contents-link">Symbology</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/rendering/" class="table-of-contents-link">Rendering</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/imodels/" class="table-of-contents-link">iModels</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/rpcinterface/" class="table-of-contents-link">RPC Interface</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/ecsql/" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-common/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/&apos;&gt;imodeljs-backend&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/" class="table-of-contents-link">imodeljs-backend</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/imodelhost/" class="table-of-contents-link">IModelHost</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/imodels/" class="table-of-contents-link">iModels</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/schema/" class="table-of-contents-link">Schema</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/models/" class="table-of-contents-link">Models</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/elements/" class="table-of-contents-link">Elements</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/codes/" class="table-of-contents-link">Codes</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/viewdefinitions/" class="table-of-contents-link">View Definitions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/relationships/" class="table-of-contents-link">Relationships</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/elementaspects/" class="table-of-contents-link">Element Aspects</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/categories/" class="table-of-contents-link">Categories</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/symbology/" class="table-of-contents-link">Symbology</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/ecdb/" class="table-of-contents-link">ECDb</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/ecsql/" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/portability/" class="table-of-contents-link">Portability</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-backend/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/&apos;&gt;imodeljs-clients&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/" class="table-of-contents-link">imodeljs-clients</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/authentication/" class="table-of-contents-link">Authentication</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/baseclients/" class="table-of-contents-link">Base Clients</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/connectservices/" class="table-of-contents-link">Connect Services</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodelhub/" class="table-of-contents-link">iModel Hub</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodelhubevents/" class="table-of-contents-link">iModel Hub Events</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodelhubglobalevents/" class="table-of-contents-link">iModel Hub Global Events</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/imodels/" class="table-of-contents-link">iModels</a></li>
+    <li>Other Services</li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/utils/" class="table-of-contents-link">Utils</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-clients/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/&apos;&gt;imodeljs-markup&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/" class="table-of-contents-link">imodeljs-markup</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/markupapp/" class="table-of-contents-link">MarkupApp</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/imodeljs-markup/markuptools/" class="table-of-contents-link">Markup Tools</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/&apos;&gt;bentleyjs-core&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/" class="table-of-contents-link">bentleyjs-core</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/besqlite/" class="table-of-contents-link">BeSQLite</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/errors/" class="table-of-contents-link">Errors</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/events/" class="table-of-contents-link">Events</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/ids/" class="table-of-contents-link">Ids</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/logging/" class="table-of-contents-link">Logging</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/utils/" class="table-of-contents-link">Utils</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/bentleyjs-core/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    <hr>
+    <h3 id="&lt;a href=&apos;http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/&apos;&gt;geometry-core&lt;/a&gt;"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/" class="table-of-contents-link">geometry-core</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/cartesiangeometry/" class="table-of-contents-link">Cartesian Geometry</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/arraysandinterfaces/" class="table-of-contents-link">Arrays &amp; Interfaces</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/bspline/" class="table-of-contents-link">Bspline</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/curve/" class="table-of-contents-link">Curve</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/numerics/" class="table-of-contents-link">Numerics</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/polyface/" class="table-of-contents-link">Polyface</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/serialization/" class="table-of-contents-link">Serialization</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/solid/" class="table-of-contents-link">Solid</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/topology/" class="table-of-contents-link">Topology</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./reference/geometry-core/all/" class="table-of-contents-link">All</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference/">API Reference</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference/bentleyjs-core/">bentleyjs-core</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference/bentleyjs-core/besqlite/">BeSQLite</a> > DbResult</div>
+            
+            <h2 class="h-dbresult">DbResult <span class="badge badge-pill badge-primary badge-enumeration">Enumeration</span><a id="dbresult" class="heading-anchor" href="#dbresult"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Values for return codes from BeSQLite functions. Consult SQLite documentation for further explanations.</p>
+<h3 class="h-members">Members<a id="members" class="heading-anchor" href="#members"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<table class="table table-responsive"><tbody><tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+<tr>
+<td class="h-be_sqlite_ok"><span class="enum-name">BE_SQLITE_OK</span><a id="be_sqlite_ok" class="heading-anchor" href="#be_sqlite_ok"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">0</span></td>
+<td>Success</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error"><span class="enum-name">BE_SQLITE_ERROR</span><a id="be_sqlite_error" class="heading-anchor" href="#be_sqlite_error"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">1</span></td>
+<td>SQL error or missing database</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_internal"><span class="enum-name">BE_SQLITE_INTERNAL</span><a id="be_sqlite_internal" class="heading-anchor" href="#be_sqlite_internal"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">2</span></td>
+<td>Internal logic error</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_perm"><span class="enum-name">BE_SQLITE_PERM</span><a id="be_sqlite_perm" class="heading-anchor" href="#be_sqlite_perm"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">3</span></td>
+<td>Access permission denied</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_abort"><span class="enum-name">BE_SQLITE_ABORT</span><a id="be_sqlite_abort" class="heading-anchor" href="#be_sqlite_abort"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">4</span></td>
+<td>Callback routine requested an abort</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_busy"><span class="enum-name">BE_SQLITE_BUSY</span><a id="be_sqlite_busy" class="heading-anchor" href="#be_sqlite_busy"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">5</span></td>
+<td>The database file is locked</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_locked"><span class="enum-name">BE_SQLITE_LOCKED</span><a id="be_sqlite_locked" class="heading-anchor" href="#be_sqlite_locked"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">6</span></td>
+<td>A table in the database is locked</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_nomem"><span class="enum-name">BE_SQLITE_NOMEM</span><a id="be_sqlite_nomem" class="heading-anchor" href="#be_sqlite_nomem"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">7</span></td>
+<td>A malloc() failed</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_readonly"><span class="enum-name">BE_SQLITE_READONLY</span><a id="be_sqlite_readonly" class="heading-anchor" href="#be_sqlite_readonly"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">8</span></td>
+<td>Attempt to write a readonly database</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_interrupt"><span class="enum-name">BE_SQLITE_INTERRUPT</span><a id="be_sqlite_interrupt" class="heading-anchor" href="#be_sqlite_interrupt"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">9</span></td>
+<td>Operation terminated by interrupt</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr"><span class="enum-name">BE_SQLITE_IOERR</span><a id="be_sqlite_ioerr" class="heading-anchor" href="#be_sqlite_ioerr"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">10</span></td>
+<td>Some kind of disk I/O error occurred</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_corrupt"><span class="enum-name">BE_SQLITE_CORRUPT</span><a id="be_sqlite_corrupt" class="heading-anchor" href="#be_sqlite_corrupt"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">11</span></td>
+<td>The database disk image is malformed</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_notfound"><span class="enum-name">BE_SQLITE_NOTFOUND</span><a id="be_sqlite_notfound" class="heading-anchor" href="#be_sqlite_notfound"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">12</span></td>
+<td>NOT USED. Table or record not found</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_full"><span class="enum-name">BE_SQLITE_FULL</span><a id="be_sqlite_full" class="heading-anchor" href="#be_sqlite_full"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">13</span></td>
+<td>Insertion failed because database is full or write operation failed because disk is full</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_cantopen"><span class="enum-name">BE_SQLITE_CANTOPEN</span><a id="be_sqlite_cantopen" class="heading-anchor" href="#be_sqlite_cantopen"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">14</span></td>
+<td>Unable to open the database file</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_protocol"><span class="enum-name">BE_SQLITE_PROTOCOL</span><a id="be_sqlite_protocol" class="heading-anchor" href="#be_sqlite_protocol"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">15</span></td>
+<td>Database lock protocol error</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_empty"><span class="enum-name">BE_SQLITE_EMPTY</span><a id="be_sqlite_empty" class="heading-anchor" href="#be_sqlite_empty"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">16</span></td>
+<td>Database is empty</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_schema"><span class="enum-name">BE_SQLITE_SCHEMA</span><a id="be_sqlite_schema" class="heading-anchor" href="#be_sqlite_schema"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">17</span></td>
+<td>The database schema changed</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_toobig"><span class="enum-name">BE_SQLITE_TOOBIG</span><a id="be_sqlite_toobig" class="heading-anchor" href="#be_sqlite_toobig"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">18</span></td>
+<td>String or BLOB exceeds size limit</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_base"><span class="enum-name">BE_SQLITE_CONSTRAINT_BASE</span><a id="be_sqlite_constraint_base" class="heading-anchor" href="#be_sqlite_constraint_base"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">19</span></td>
+<td>Abort due to constraint violation. See extended error values.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_mismatch"><span class="enum-name">BE_SQLITE_MISMATCH</span><a id="be_sqlite_mismatch" class="heading-anchor" href="#be_sqlite_mismatch"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">20</span></td>
+<td>Data type mismatch</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_misuse"><span class="enum-name">BE_SQLITE_MISUSE</span><a id="be_sqlite_misuse" class="heading-anchor" href="#be_sqlite_misuse"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">21</span></td>
+<td>Library used incorrectly</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_nolfs"><span class="enum-name">BE_SQLITE_NOLFS</span><a id="be_sqlite_nolfs" class="heading-anchor" href="#be_sqlite_nolfs"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">22</span></td>
+<td>Uses OS features not supported on host</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_auth"><span class="enum-name">BE_SQLITE_AUTH</span><a id="be_sqlite_auth" class="heading-anchor" href="#be_sqlite_auth"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">23</span></td>
+<td>Authorization denied</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_format"><span class="enum-name">BE_SQLITE_FORMAT</span><a id="be_sqlite_format" class="heading-anchor" href="#be_sqlite_format"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">24</span></td>
+<td>Auxiliary database format error</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_range"><span class="enum-name">BE_SQLITE_RANGE</span><a id="be_sqlite_range" class="heading-anchor" href="#be_sqlite_range"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">25</span></td>
+<td>2nd parameter to Bind out of range</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_notadb"><span class="enum-name">BE_SQLITE_NOTADB</span><a id="be_sqlite_notadb" class="heading-anchor" href="#be_sqlite_notadb"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">26</span></td>
+<td>File opened that is not a database file</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_row"><span class="enum-name">BE_SQLITE_ROW</span><a id="be_sqlite_row" class="heading-anchor" href="#be_sqlite_row"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">100</span></td>
+<td>Step() has another row ready</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_done"><span class="enum-name">BE_SQLITE_DONE</span><a id="be_sqlite_done" class="heading-anchor" href="#be_sqlite_done"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value">101</span></td>
+<td>Step() has finished executing</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_busy_recovery"><span class="enum-name">BE_SQLITE_BUSY_RECOVERY</span><a id="be_sqlite_busy_recovery" class="heading-anchor" href="#be_sqlite_busy_recovery"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_BUSY | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_abort_rollback"><span class="enum-name">BE_SQLITE_ABORT_ROLLBACK</span><a id="be_sqlite_abort_rollback" class="heading-anchor" href="#be_sqlite_abort_rollback"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_ABORT | (2 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_read"><span class="enum-name">BE_SQLITE_IOERR_READ</span><a id="be_sqlite_ioerr_read" class="heading-anchor" href="#be_sqlite_ioerr_read"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_short_read"><span class="enum-name">BE_SQLITE_IOERR_SHORT_READ</span><a id="be_sqlite_ioerr_short_read" class="heading-anchor" href="#be_sqlite_ioerr_short_read"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (2 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_write"><span class="enum-name">BE_SQLITE_IOERR_WRITE</span><a id="be_sqlite_ioerr_write" class="heading-anchor" href="#be_sqlite_ioerr_write"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (3 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_fsync"><span class="enum-name">BE_SQLITE_IOERR_FSYNC</span><a id="be_sqlite_ioerr_fsync" class="heading-anchor" href="#be_sqlite_ioerr_fsync"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (4 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_dir_fsync"><span class="enum-name">BE_SQLITE_IOERR_DIR_FSYNC</span><a id="be_sqlite_ioerr_dir_fsync" class="heading-anchor" href="#be_sqlite_ioerr_dir_fsync"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (5 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_truncate"><span class="enum-name">BE_SQLITE_IOERR_TRUNCATE</span><a id="be_sqlite_ioerr_truncate" class="heading-anchor" href="#be_sqlite_ioerr_truncate"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (6 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_fstat"><span class="enum-name">BE_SQLITE_IOERR_FSTAT</span><a id="be_sqlite_ioerr_fstat" class="heading-anchor" href="#be_sqlite_ioerr_fstat"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (7 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_unlock"><span class="enum-name">BE_SQLITE_IOERR_UNLOCK</span><a id="be_sqlite_ioerr_unlock" class="heading-anchor" href="#be_sqlite_ioerr_unlock"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (8 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_rdlock"><span class="enum-name">BE_SQLITE_IOERR_RDLOCK</span><a id="be_sqlite_ioerr_rdlock" class="heading-anchor" href="#be_sqlite_ioerr_rdlock"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (9 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_schemaupgraderequired"><span class="enum-name">BE_SQLITE_ERROR_SchemaUpgradeRequired</span><a id="be_sqlite_error_schemaupgraderequired" class="heading-anchor" href="#be_sqlite_error_schemaupgraderequired"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 15 &lt;&lt; 24)</span></td>
+<td>The schemas found in the database need to be upgraded.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_schematoonew"><span class="enum-name">BE_SQLITE_ERROR_SchemaTooNew</span><a id="be_sqlite_error_schematoonew" class="heading-anchor" href="#be_sqlite_error_schematoonew"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 16 &lt;&lt; 24)</span></td>
+<td>The schemas found in the database are too new, and the application needs to be upgraded.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_schematooold"><span class="enum-name">BE_SQLITE_ERROR_SchemaTooOld</span><a id="be_sqlite_error_schematooold" class="heading-anchor" href="#be_sqlite_error_schematooold"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 17 &lt;&lt; 24)</span></td>
+<td>The schemas found in the database are too old, and the DgnDb needs to be upgraded.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_schemalockfailed"><span class="enum-name">BE_SQLITE_ERROR_SchemaLockFailed</span><a id="be_sqlite_error_schemalockfailed" class="heading-anchor" href="#be_sqlite_error_schemalockfailed"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 18 &lt;&lt; 24)</span></td>
+<td>Error acquiring a lock on the schemas before upgrade.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_schemaupgradefailed"><span class="enum-name">BE_SQLITE_ERROR_SchemaUpgradeFailed</span><a id="be_sqlite_error_schemaupgradefailed" class="heading-anchor" href="#be_sqlite_error_schemaupgradefailed"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 19 &lt;&lt; 24)</span></td>
+<td>Error upgrading the schemas in the database.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_schemaimportfailed"><span class="enum-name">BE_SQLITE_ERROR_SchemaImportFailed</span><a id="be_sqlite_error_schemaimportfailed" class="heading-anchor" href="#be_sqlite_error_schemaimportfailed"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 20 &lt;&lt; 24)</span></td>
+<td>Error importing the schemas into the database.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_couldnotacquirelocksorcodes"><span class="enum-name">BE_SQLITE_ERROR_CouldNotAcquireLocksOrCodes</span><a id="be_sqlite_error_couldnotacquirelocksorcodes" class="heading-anchor" href="#be_sqlite_error_couldnotacquirelocksorcodes"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | 21 &lt;&lt; 24)</span></td>
+<td>Error acquiring locks or codes</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_fileexists"><span class="enum-name">BE_SQLITE_ERROR_FileExists</span><a id="be_sqlite_error_fileexists" class="heading-anchor" href="#be_sqlite_error_fileexists"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (1 &lt;&lt; 24))</span></td>
+<td>attempt to create a new file when a file by that name already exists</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_delete"><span class="enum-name">BE_SQLITE_IOERR_DELETE</span><a id="be_sqlite_ioerr_delete" class="heading-anchor" href="#be_sqlite_ioerr_delete"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (10 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_blocked"><span class="enum-name">BE_SQLITE_IOERR_BLOCKED</span><a id="be_sqlite_ioerr_blocked" class="heading-anchor" href="#be_sqlite_ioerr_blocked"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (11 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_nomem"><span class="enum-name">BE_SQLITE_IOERR_NOMEM</span><a id="be_sqlite_ioerr_nomem" class="heading-anchor" href="#be_sqlite_ioerr_nomem"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (12 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_access"><span class="enum-name">BE_SQLITE_IOERR_ACCESS</span><a id="be_sqlite_ioerr_access" class="heading-anchor" href="#be_sqlite_ioerr_access"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (13 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_checkreservedlock"><span class="enum-name">BE_SQLITE_IOERR_CHECKRESERVEDLOCK</span><a id="be_sqlite_ioerr_checkreservedlock" class="heading-anchor" href="#be_sqlite_ioerr_checkreservedlock"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (14 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_lock"><span class="enum-name">BE_SQLITE_IOERR_LOCK</span><a id="be_sqlite_ioerr_lock" class="heading-anchor" href="#be_sqlite_ioerr_lock"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (15 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_close"><span class="enum-name">BE_SQLITE_IOERR_CLOSE</span><a id="be_sqlite_ioerr_close" class="heading-anchor" href="#be_sqlite_ioerr_close"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (16 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_dir_close"><span class="enum-name">BE_SQLITE_IOERR_DIR_CLOSE</span><a id="be_sqlite_ioerr_dir_close" class="heading-anchor" href="#be_sqlite_ioerr_dir_close"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (17 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_shmopen"><span class="enum-name">BE_SQLITE_IOERR_SHMOPEN</span><a id="be_sqlite_ioerr_shmopen" class="heading-anchor" href="#be_sqlite_ioerr_shmopen"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (18 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_shmsize"><span class="enum-name">BE_SQLITE_IOERR_SHMSIZE</span><a id="be_sqlite_ioerr_shmsize" class="heading-anchor" href="#be_sqlite_ioerr_shmsize"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (19 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_alreadyopen"><span class="enum-name">BE_SQLITE_ERROR_AlreadyOpen</span><a id="be_sqlite_error_alreadyopen" class="heading-anchor" href="#be_sqlite_error_alreadyopen"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (2 &lt;&lt; 24))</span></td>
+<td>attempt to open a BeSQLite::Db that is already in use somewhere.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_shmlock"><span class="enum-name">BE_SQLITE_IOERR_SHMLOCK</span><a id="be_sqlite_ioerr_shmlock" class="heading-anchor" href="#be_sqlite_ioerr_shmlock"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (20 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_shmmap"><span class="enum-name">BE_SQLITE_IOERR_SHMMAP</span><a id="be_sqlite_ioerr_shmmap" class="heading-anchor" href="#be_sqlite_ioerr_shmmap"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (21 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_seek"><span class="enum-name">BE_SQLITE_IOERR_SEEK</span><a id="be_sqlite_ioerr_seek" class="heading-anchor" href="#be_sqlite_ioerr_seek"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (22 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_ioerr_delete_noent"><span class="enum-name">BE_SQLITE_IOERR_DELETE_NOENT</span><a id="be_sqlite_ioerr_delete_noent" class="heading-anchor" href="#be_sqlite_ioerr_delete_noent"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (23 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_nopropertytable"><span class="enum-name">BE_SQLITE_ERROR_NoPropertyTable</span><a id="be_sqlite_error_nopropertytable" class="heading-anchor" href="#be_sqlite_error_nopropertytable"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (3 &lt;&lt; 24))</span></td>
+<td>attempt to open a BeSQLite::Db that doesn&apos;t have a property table.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_filenotfound"><span class="enum-name">BE_SQLITE_ERROR_FileNotFound</span><a id="be_sqlite_error_filenotfound" class="heading-anchor" href="#be_sqlite_error_filenotfound"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (4 &lt;&lt; 24))</span></td>
+<td>the database name is not a file.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_notxnactive"><span class="enum-name">BE_SQLITE_ERROR_NoTxnActive</span><a id="be_sqlite_error_notxnactive" class="heading-anchor" href="#be_sqlite_error_notxnactive"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (5 &lt;&lt; 24))</span></td>
+<td>there is no transaction active and the database was opened with AllowImplicitTransactions=false</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_baddbprofile"><span class="enum-name">BE_SQLITE_ERROR_BadDbProfile</span><a id="be_sqlite_error_baddbprofile" class="heading-anchor" href="#be_sqlite_error_baddbprofile"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (6 &lt;&lt; 24))</span></td>
+<td>wrong BeSQLite profile version</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_invalidprofileversion"><span class="enum-name">BE_SQLITE_ERROR_InvalidProfileVersion</span><a id="be_sqlite_error_invalidprofileversion" class="heading-anchor" href="#be_sqlite_error_invalidprofileversion"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (7 &lt;&lt; 24))</span></td>
+<td>Profile of file could not be determined.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_profileupgradefailed"><span class="enum-name">BE_SQLITE_ERROR_ProfileUpgradeFailed</span><a id="be_sqlite_error_profileupgradefailed" class="heading-anchor" href="#be_sqlite_error_profileupgradefailed"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (8 &lt;&lt; 24))</span></td>
+<td>Upgrade of profile of file failed.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_profiletoooldforreadwrite"><span class="enum-name">BE_SQLITE_ERROR_ProfileTooOldForReadWrite</span><a id="be_sqlite_error_profiletoooldforreadwrite" class="heading-anchor" href="#be_sqlite_error_profiletoooldforreadwrite"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (9 &lt;&lt; 24))</span></td>
+<td>Profile of file is too old. Therefore file can only be opened read-only.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_locked_sharedcache"><span class="enum-name">BE_SQLITE_LOCKED_SHAREDCACHE</span><a id="be_sqlite_locked_sharedcache" class="heading-anchor" href="#be_sqlite_locked_sharedcache"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_LOCKED | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_corrupt_vtab"><span class="enum-name">BE_SQLITE_CORRUPT_VTAB</span><a id="be_sqlite_corrupt_vtab" class="heading-anchor" href="#be_sqlite_corrupt_vtab"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CORRUPT | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_profiletooold"><span class="enum-name">BE_SQLITE_ERROR_ProfileTooOld</span><a id="be_sqlite_error_profiletooold" class="heading-anchor" href="#be_sqlite_error_profiletooold"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (10 &lt;&lt; 24))</span></td>
+<td>Profile of file is too old. Therefore file cannot be opened.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_profiletoonewforreadwrite"><span class="enum-name">BE_SQLITE_ERROR_ProfileTooNewForReadWrite</span><a id="be_sqlite_error_profiletoonewforreadwrite" class="heading-anchor" href="#be_sqlite_error_profiletoonewforreadwrite"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (11 &lt;&lt; 24))</span></td>
+<td>Profile of file is too new for read-write access. Therefore file can only be opened read-only.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_profiletoonew"><span class="enum-name">BE_SQLITE_ERROR_ProfileTooNew</span><a id="be_sqlite_error_profiletoonew" class="heading-anchor" href="#be_sqlite_error_profiletoonew"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (12 &lt;&lt; 24))</span></td>
+<td>Profile of file is too new. Therefore file cannot be opened.</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_changetrackerror"><span class="enum-name">BE_SQLITE_ERROR_ChangeTrackError</span><a id="be_sqlite_error_changetrackerror" class="heading-anchor" href="#be_sqlite_error_changetrackerror"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (13 &lt;&lt; 24))</span></td>
+<td>attempt to commit with active changetrack</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_error_invalidchangesetversion"><span class="enum-name">BE_SQLITE_ERROR_InvalidChangeSetVersion</span><a id="be_sqlite_error_invalidchangesetversion" class="heading-anchor" href="#be_sqlite_error_invalidchangesetversion"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_IOERR | (14 &lt;&lt; 24))</span></td>
+<td>invalid version of the revision file is being imported</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_cantopen_notempdir"><span class="enum-name">BE_SQLITE_CANTOPEN_NOTEMPDIR</span><a id="be_sqlite_cantopen_notempdir" class="heading-anchor" href="#be_sqlite_cantopen_notempdir"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CANTOPEN | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_cantopen_isdir"><span class="enum-name">BE_SQLITE_CANTOPEN_ISDIR</span><a id="be_sqlite_cantopen_isdir" class="heading-anchor" href="#be_sqlite_cantopen_isdir"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CANTOPEN | (2 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_cantopen_fullpath"><span class="enum-name">BE_SQLITE_CANTOPEN_FULLPATH</span><a id="be_sqlite_cantopen_fullpath" class="heading-anchor" href="#be_sqlite_cantopen_fullpath"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CANTOPEN | (3 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_readonly_recovery"><span class="enum-name">BE_SQLITE_READONLY_RECOVERY</span><a id="be_sqlite_readonly_recovery" class="heading-anchor" href="#be_sqlite_readonly_recovery"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_READONLY | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_readonly_cantlock"><span class="enum-name">BE_SQLITE_READONLY_CANTLOCK</span><a id="be_sqlite_readonly_cantlock" class="heading-anchor" href="#be_sqlite_readonly_cantlock"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_READONLY | (2 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_readonly_rollback"><span class="enum-name">BE_SQLITE_READONLY_ROLLBACK</span><a id="be_sqlite_readonly_rollback" class="heading-anchor" href="#be_sqlite_readonly_rollback"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_READONLY | (3 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_check"><span class="enum-name">BE_SQLITE_CONSTRAINT_CHECK</span><a id="be_sqlite_constraint_check" class="heading-anchor" href="#be_sqlite_constraint_check"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (1 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_commithook"><span class="enum-name">BE_SQLITE_CONSTRAINT_COMMITHOOK</span><a id="be_sqlite_constraint_commithook" class="heading-anchor" href="#be_sqlite_constraint_commithook"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (2 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_foreignkey"><span class="enum-name">BE_SQLITE_CONSTRAINT_FOREIGNKEY</span><a id="be_sqlite_constraint_foreignkey" class="heading-anchor" href="#be_sqlite_constraint_foreignkey"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (3 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_function"><span class="enum-name">BE_SQLITE_CONSTRAINT_FUNCTION</span><a id="be_sqlite_constraint_function" class="heading-anchor" href="#be_sqlite_constraint_function"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (4 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_notnull"><span class="enum-name">BE_SQLITE_CONSTRAINT_NOTNULL</span><a id="be_sqlite_constraint_notnull" class="heading-anchor" href="#be_sqlite_constraint_notnull"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (5 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_primarykey"><span class="enum-name">BE_SQLITE_CONSTRAINT_PRIMARYKEY</span><a id="be_sqlite_constraint_primarykey" class="heading-anchor" href="#be_sqlite_constraint_primarykey"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (6 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_trigger"><span class="enum-name">BE_SQLITE_CONSTRAINT_TRIGGER</span><a id="be_sqlite_constraint_trigger" class="heading-anchor" href="#be_sqlite_constraint_trigger"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (7 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_unique"><span class="enum-name">BE_SQLITE_CONSTRAINT_UNIQUE</span><a id="be_sqlite_constraint_unique" class="heading-anchor" href="#be_sqlite_constraint_unique"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (8 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+<tr>
+<td class="h-be_sqlite_constraint_vtab"><span class="enum-name">BE_SQLITE_CONSTRAINT_VTAB</span><a id="be_sqlite_constraint_vtab" class="heading-anchor" href="#be_sqlite_constraint_vtab"><span><i class="fa fa-link fa-rotate-90"></i></span></a></td>
+<td><span class="enum-value"> (BE_SQLITE_CONSTRAINT_BASE | (9 &lt;&lt; 8))</span></td>
+<td>&#xA0;</td>
+</tr>
+</tbody></table><h3 class="h-defined-in">Defined in<a id="defined-in" class="heading-anchor" href="#defined-in"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<ul>
+<li><span class="defined-in"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/core/bentley%2Fsrc%2FBeSQLite.ts" target="_blank">BeSQLite.ts</a></span></li>
+</ul>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item active typeDocHeader'>
+            <a data-target="#inner-nav-dbresult" class='title' href="#dbresult"/>
+            <b class='dropdown-menu-title menu-text'>DbResult</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-dbresult" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-members" class='title' href="#members"/>
+                            <b class='dropdown-menu-title menu-text'>Members</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-members" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ok">BE_SQLITE_OK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error">BE_SQLITE_ERROR</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_internal">BE_SQLITE_INTERNAL</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_perm">BE_SQLITE_PERM</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_abort">BE_SQLITE_ABORT</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_busy">BE_SQLITE_BUSY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_locked">BE_SQLITE_LOCKED</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_nomem">BE_SQLITE_NOMEM</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_readonly">BE_SQLITE_READONLY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_interrupt">BE_SQLITE_INTERRUPT</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr">BE_SQLITE_IOERR</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_corrupt">BE_SQLITE_CORRUPT</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_notfound">BE_SQLITE_NOTFOUND</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_full">BE_SQLITE_FULL</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_cantopen">BE_SQLITE_CANTOPEN</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_protocol">BE_SQLITE_PROTOCOL</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_empty">BE_SQLITE_EMPTY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_schema">BE_SQLITE_SCHEMA</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_toobig">BE_SQLITE_TOOBIG</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_base">BE_SQLITE_CONSTRAINT_BASE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_mismatch">BE_SQLITE_MISMATCH</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_misuse">BE_SQLITE_MISUSE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_nolfs">BE_SQLITE_NOLFS</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_auth">BE_SQLITE_AUTH</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_format">BE_SQLITE_FORMAT</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_range">BE_SQLITE_RANGE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_notadb">BE_SQLITE_NOTADB</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_row">BE_SQLITE_ROW</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_done">BE_SQLITE_DONE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_busy_recovery">BE_SQLITE_BUSY_RECOVERY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_abort_rollback">BE_SQLITE_ABORT_ROLLBACK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_read">BE_SQLITE_IOERR_READ</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_short_read">BE_SQLITE_IOERR_SHORT_READ</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_write">BE_SQLITE_IOERR_WRITE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_fsync">BE_SQLITE_IOERR_FSYNC</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_dir_fsync">BE_SQLITE_IOERR_DIR_FSYNC</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_truncate">BE_SQLITE_IOERR_TRUNCATE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_fstat">BE_SQLITE_IOERR_FSTAT</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_unlock">BE_SQLITE_IOERR_UNLOCK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_rdlock">BE_SQLITE_IOERR_RDLOCK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_schemaupgraderequired">BE_SQLITE_ERROR_SchemaUpgradeRequired</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_schematoonew">BE_SQLITE_ERROR_SchemaTooNew</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_schematooold">BE_SQLITE_ERROR_SchemaTooOld</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_schemalockfailed">BE_SQLITE_ERROR_SchemaLockFailed</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_schemaupgradefailed">BE_SQLITE_ERROR_SchemaUpgradeFailed</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_schemaimportfailed">BE_SQLITE_ERROR_SchemaImportFailed</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_couldnotacquirelocksorcodes">BE_SQLITE_ERROR_CouldNotAcquireLocksOrCodes</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_fileexists">BE_SQLITE_ERROR_FileExists</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_delete">BE_SQLITE_IOERR_DELETE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_blocked">BE_SQLITE_IOERR_BLOCKED</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_nomem">BE_SQLITE_IOERR_NOMEM</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_access">BE_SQLITE_IOERR_ACCESS</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_checkreservedlock">BE_SQLITE_IOERR_CHECKRESERVEDLOCK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_lock">BE_SQLITE_IOERR_LOCK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_close">BE_SQLITE_IOERR_CLOSE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_dir_close">BE_SQLITE_IOERR_DIR_CLOSE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_shmopen">BE_SQLITE_IOERR_SHMOPEN</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_shmsize">BE_SQLITE_IOERR_SHMSIZE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_alreadyopen">BE_SQLITE_ERROR_AlreadyOpen</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_shmlock">BE_SQLITE_IOERR_SHMLOCK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_shmmap">BE_SQLITE_IOERR_SHMMAP</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_seek">BE_SQLITE_IOERR_SEEK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_ioerr_delete_noent">BE_SQLITE_IOERR_DELETE_NOENT</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_nopropertytable">BE_SQLITE_ERROR_NoPropertyTable</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_filenotfound">BE_SQLITE_ERROR_FileNotFound</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_notxnactive">BE_SQLITE_ERROR_NoTxnActive</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_baddbprofile">BE_SQLITE_ERROR_BadDbProfile</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_invalidprofileversion">BE_SQLITE_ERROR_InvalidProfileVersion</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_profileupgradefailed">BE_SQLITE_ERROR_ProfileUpgradeFailed</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_profiletoooldforreadwrite">BE_SQLITE_ERROR_ProfileTooOldForReadWrite</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_locked_sharedcache">BE_SQLITE_LOCKED_SHAREDCACHE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_corrupt_vtab">BE_SQLITE_CORRUPT_VTAB</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_profiletooold">BE_SQLITE_ERROR_ProfileTooOld</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_profiletoonewforreadwrite">BE_SQLITE_ERROR_ProfileTooNewForReadWrite</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_profiletoonew">BE_SQLITE_ERROR_ProfileTooNew</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_changetrackerror">BE_SQLITE_ERROR_ChangeTrackError</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_error_invalidchangesetversion">BE_SQLITE_ERROR_InvalidChangeSetVersion</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_cantopen_notempdir">BE_SQLITE_CANTOPEN_NOTEMPDIR</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_cantopen_isdir">BE_SQLITE_CANTOPEN_ISDIR</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_cantopen_fullpath">BE_SQLITE_CANTOPEN_FULLPATH</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_readonly_recovery">BE_SQLITE_READONLY_RECOVERY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_readonly_cantlock">BE_SQLITE_READONLY_CANTLOCK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_readonly_rollback">BE_SQLITE_READONLY_ROLLBACK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_check">BE_SQLITE_CONSTRAINT_CHECK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_commithook">BE_SQLITE_CONSTRAINT_COMMITHOOK</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_foreignkey">BE_SQLITE_CONSTRAINT_FOREIGNKEY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_function">BE_SQLITE_CONSTRAINT_FUNCTION</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_notnull">BE_SQLITE_CONSTRAINT_NOTNULL</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_primarykey">BE_SQLITE_CONSTRAINT_PRIMARYKEY</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_trigger">BE_SQLITE_CONSTRAINT_TRIGGER</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_unique">BE_SQLITE_CONSTRAINT_UNIQUE</a>
+                                    </li>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#be_sqlite_constraint_vtab">BE_SQLITE_CONSTRAINT_VTAB</a>
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#defined-in">Defined in</a>
+                    </li>
+            </ul>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

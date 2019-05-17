@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>First Examples - iModel.js</title>
+    <meta name="og:title" content="First Examples - iModel.js">
+    <meta name="twitter:title" content="First Examples - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="the imodel.js library"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/" class="table-of-contents-link">The iModel.js Library</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/frontend/" class="table-of-contents-link">Frontend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/backend/" class="table-of-contents-link">Backend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/common/" class="table-of-contents-link">Common</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/" class="table-of-contents-link">Geometry</a></li>
+    </ul>
+    <hr>
+    <p>&#xA0;</p>
+    <h3 id="helpful links">Helpful links</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/imodelhub/" class="table-of-contents-link">iModelHub</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/wireformat" class="table-of-contents-link">Wire Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/faq" class="table-of-contents-link">Frequently Asked Questions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/guidelines/" class="table-of-contents-link">Guidelines and Tips</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/glossary" class="table-of-contents-link">iModel.js Glossary</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/">Learning</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/ecsqltutorial/">ecsqltutorial</a> > FirstExamples</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/learning%2FECSQLTutorial%2FFirstExamples.md" target="_blank">Edit this page</a></div>
+            <h1 id="first examples">First Examples</h1>
+<p>We will start off the tutorial by a simple ECSQL example:</p>
+<h2 class="h-first-ecsql">First ECSQL<a id="first-ecsql" class="heading-anchor" href="#first-ecsql"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return id, subclass and code of all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatiallocationelement'>SpatialLocationElement</a>s in the iModel.</p>
+<p><em>ECSQL:</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, ECClassId, CodeValue FROM bis.SpatialLocationElement</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+<th>CodeValue</th>
+</tr>
+<tr>
+<td>0x1000000001d</td>
+<td>MyDomain.Building</td>
+<td>Building A</td>
+</tr>
+<tr>
+<td>0x1000000001f</td>
+<td>MyDomain.Space</td>
+<td>A-G-1</td>
+</tr>
+<tr>
+<td>0x10000000021</td>
+<td>MyDomain.Space</td>
+<td>A-G-2</td>
+</tr>
+<tr>
+<td>0x10000000024</td>
+<td>MyDomain.Space</td>
+<td>A-1-1</td>
+</tr>
+<tr>
+<td>0x10000000027</td>
+<td>MyDomain.Space</td>
+<td>A-2-1</td>
+</tr>
+<tr>
+<td>0x10000000029</td>
+<td>MyDomain.Space</td>
+<td>A-2-2</td>
+</tr>
+<tr>
+<td>0x1000000002b</td>
+<td>MyDomain.Space</td>
+<td>A-2-3</td>
+</tr>
+<tr>
+<td>0x1000000002d</td>
+<td>MyDomain.Space</td>
+<td>A-2-4</td>
+</tr>
+<tr>
+<td>0x1000000002f</td>
+<td>MyDomain.Space</td>
+<td>A-2-5</td>
+</tr>
+<tr>
+<td>0x10000000031</td>
+<td>MyDomain.Space</td>
+<td>A-2-6</td>
+</tr>
+<tr>
+<td>0x10000000033</td>
+<td>MyDomain.Space</td>
+<td>A-2-7</td>
+</tr>
+<tr>
+<td>0x10000000035</td>
+<td>MyDomain.Space</td>
+<td>A-2-8</td>
+</tr>
+<tr>
+<td>0x1000000001e</td>
+<td>MyDomain.Story</td>
+<td>A-G</td>
+</tr>
+<tr>
+<td>0x10000000023</td>
+<td>MyDomain.Story</td>
+<td>A-1</td>
+</tr>
+<tr>
+<td>0x10000000026</td>
+<td>MyDomain.Story</td>
+<td>A-2</td>
+</tr>
+</tbody></table></blockquote>
+<h2 class="h-fully-qualified-class-names">Fully qualified class names<a id="fully-qualified-class-names" class="heading-anchor" href="#fully-qualified-class-names"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>The example illustrates an important rule. As an iModel contains more than one ECSchema, class names might be ambiguous. Therefore <strong>the classes used in an ECSQL have to be fully qualified by their schemas</strong>. The schema can either be specified by its name or by its alias.</p>
+<p>Syntax: <code>&lt;Schema name or alias&gt;.&lt;Class name&gt;</code></p>
+<p>See <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql/#fully-qualifying-ecclasses-in-ecsql'>ECSQL Reference</a> for details.</p>
+<p>The example from above uses the schema alias. If you replace it by the schema name, you will get the same result as above.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return id, subclass and code of all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatiallocationelement'>SpatialLocationElement</a>s in the iModel.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, ECClassId, CodeValue FROM BisCore.SpatialLocationElement</code></pre>
+<p><em>Result:</em> As in <a href="#first-ecsql">First ECSQL</a></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+<th>CodeValue</th>
+</tr>
+<tr>
+<td>0x1000000001d</td>
+<td>MyDomain.Building</td>
+<td>Building A</td>
+</tr>
+<tr>
+<td>0x1000000001f</td>
+<td>MyDomain.Space</td>
+<td>A-G-1</td>
+</tr>
+<tr>
+<td>0x10000000021</td>
+<td>MyDomain.Space</td>
+<td>A-G-2</td>
+</tr>
+<tr>
+<td>0x10000000024</td>
+<td>MyDomain.Space</td>
+<td>A-1-1</td>
+</tr>
+<tr>
+<td>0x10000000027</td>
+<td>MyDomain.Space</td>
+<td>A-2-1</td>
+</tr>
+<tr>
+<td>0x10000000029</td>
+<td>MyDomain.Space</td>
+<td>A-2-2</td>
+</tr>
+<tr>
+<td>0x1000000002b</td>
+<td>MyDomain.Space</td>
+<td>A-2-3</td>
+</tr>
+<tr>
+<td>0x1000000002d</td>
+<td>MyDomain.Space</td>
+<td>A-2-4</td>
+</tr>
+<tr>
+<td>0x1000000002f</td>
+<td>MyDomain.Space</td>
+<td>A-2-5</td>
+</tr>
+<tr>
+<td>0x10000000031</td>
+<td>MyDomain.Space</td>
+<td>A-2-6</td>
+</tr>
+<tr>
+<td>0x10000000033</td>
+<td>MyDomain.Space</td>
+<td>A-2-7</td>
+</tr>
+<tr>
+<td>0x10000000035</td>
+<td>MyDomain.Space</td>
+<td>A-2-8</td>
+</tr>
+<tr>
+<td>0x1000000001e</td>
+<td>MyDomain.Story</td>
+<td>A-G</td>
+</tr>
+<tr>
+<td>0x10000000023</td>
+<td>MyDomain.Story</td>
+<td>A-1</td>
+</tr>
+<tr>
+<td>0x10000000026</td>
+<td>MyDomain.Story</td>
+<td>A-2</td>
+</tr>
+</tbody></table></blockquote>
+<p>If you omit the schema, you will get an error:</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return id, subclass and code of all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatiallocationelement'>SpatialLocationElement</a>s in the iModel.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, ECClassId, CodeValue FROM SpatialLocationElement</code></pre>
+<p><em>Result</em></p>
+<p><code>Failed to execute the ECSQL: Invalid ECSQL class expression: Valid syntax: [&lt;table space&gt;.]&lt;schema name or alias&gt;.&lt;class name&gt;</code></p>
+</blockquote>
+<h2 class="h-element-count">Element Count<a id="element-count" class="heading-anchor" href="#element-count"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>The above example is not very meaningful. In large iModels the query might return far too many instances. If you want to find out how many <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#element'>Element</a>s there are in the iModel, you can run the following query.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Find out how many <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#element'>Element</a>s there are in the iModel.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT count(*) FROM bis.Element</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>count(*)</th>
+</tr>
+<tr>
+<td>81</td>
+<td></td>
+</tr>
+</tbody></table></blockquote>
+<p>This query considers all kinds of <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#element'>Element</a>s. If we want to focus only on Elements which represent realworld assets, we can use the BIS class <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s instead.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Find out how many <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s there are in the iModel.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT count(*) FROM bis.SpatialElement</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>count(*)</th>
+</tr>
+<tr>
+<td>27</td>
+<td></td>
+</tr>
+</tbody></table></blockquote>
+<p>Let&apos;s compute some more Element statistic with ECSQL. We want to find out how many <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s there are in the iModel per actual element type (where element type here refers to the subclasses of the <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#element'>Element</a> ECClass).</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Find out how many <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s there are in the iModel per actual element type.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECClassId, count(*) ElementCount FROM bis.SpatialElement GROUP BY ECClassId ORDER BY ECClassId</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECClassId</th>
+<th>ElementCount</th>
+</tr>
+<tr>
+<td>MyDomain.Building</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MyDomain.Device</td>
+<td>12</td>
+</tr>
+<tr>
+<td>MyDomain.Space</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MyDomain.Story</td>
+<td>3</td>
+</tr>
+</tbody></table></blockquote>
+<h2 class="h-limiting-the-result-set">Limiting the result set<a id="limiting-the-result-set" class="heading-anchor" href="#limiting-the-result-set"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Another way to deal with large query results is to use <code>LIMIT</code> and <code>OFFSET</code>. See <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql/#limit-and-offset'>LIMIT and OFFSET in ECSQL Reference</a> for details.</p>
+<p>Let&apos;s apply <code>LIMIT</code> and <code>OFFSET</code> to he first ECSQL example from above (<a href="#first-ecsql">first ECSQL example</a>) to shrink the returned rows to a more digestible number.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return the first 5 <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatiallocationelement'>SpatialLocationElement</a>s only.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, ECClassId, CodeValue FROM bis.SpatialLocationElement LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+<th>CodeValue</th>
+</tr>
+<tr>
+<td>0x1000000001d</td>
+<td>MyDomain.Building</td>
+<td>Building A</td>
+</tr>
+<tr>
+<td>0x1000000001f</td>
+<td>MyDomain.Space</td>
+<td>A-G-1</td>
+</tr>
+<tr>
+<td>0x10000000021</td>
+<td>MyDomain.Space</td>
+<td>A-G-2</td>
+</tr>
+<tr>
+<td>0x10000000024</td>
+<td>MyDomain.Space</td>
+<td>A-1-1</td>
+</tr>
+<tr>
+<td>0x10000000027</td>
+<td>MyDomain.Space</td>
+<td>A-2-1</td>
+</tr>
+</tbody></table></blockquote>
+<hr>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return the 11th through 15th <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatiallocationelement'>SpatialLocationElement</a> only.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, ECClassId, CodeValue FROM bis.SpatialLocationElement LIMIT 5 OFFSET 10</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+<th>CodeValue</th>
+</tr>
+<tr>
+<td>0x10000000033</td>
+<td>MyDomain.Space</td>
+<td>A-2-7</td>
+</tr>
+<tr>
+<td>0x10000000035</td>
+<td>MyDomain.Space</td>
+<td>A-2-8</td>
+</tr>
+<tr>
+<td>0x1000000001e</td>
+<td>MyDomain.Story</td>
+<td>A-G</td>
+</tr>
+<tr>
+<td>0x10000000023</td>
+<td>MyDomain.Story</td>
+<td>A-1</td>
+</tr>
+<tr>
+<td>0x10000000026</td>
+<td>MyDomain.Story</td>
+<td>A-2</td>
+</tr>
+</tbody></table></blockquote>
+<h2 class="h-formatting-the-output">Formatting the Output<a id="formatting-the-output" class="heading-anchor" href="#formatting-the-output"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p><strong>Aliases</strong> for the expressions in the SELECT clause are a convenient way to format the output of the ECSQL query.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Find out how many <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s there are in the iModel and give the resulting column the more meaningful name <em>Element Count</em>.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT count(*) ElementCount FROM bis.SpatialElement</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ElementCount</th>
+</tr>
+<tr>
+<td>27</td>
+<td></td>
+</tr>
+</tbody></table></blockquote>
+<hr>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return id and code of all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#element'>Element</a>s in the iModel and give the id column the name <em>ElementId</em> and the code value column the name <em>Code</em>.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId ElementId, ECClassId, CodeValue Code FROM bis.Element LIMIT 3</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ElementId</th>
+<th>ECClassId</th>
+<th>Code</th>
+</tr>
+<tr>
+<td>0x1</td>
+<td>BisCore.Subject</td>
+<td>My Campus</td>
+</tr>
+<tr>
+<td>0xe</td>
+<td>BisCore.LinkPartition</td>
+<td>BisCore.RealityDataSources</td>
+</tr>
+<tr>
+<td>0x10</td>
+<td>BisCore.DefinitionPartition</td>
+<td>BisCore.DictionaryModel</td>
+</tr>
+</tbody></table></blockquote>
+<p>One aspect of the power of ECSQL (and SQL) is the richness of expressiveness. Instead of just returning the property values from
+some class, you can let ECSQL do calculations. The following example uses ECSQL as a simple calculator.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Compute the perimeter and area of a circle with a radius of 10 cm.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT 10 Radius, (2 * 3.1415 * 10) Perimeter, (3.1415 * 10 * 10) Area FROM bis.Element LIMIT 1</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>Radius</th>
+<th>Perimeter</th>
+<th>Area</th>
+</tr>
+<tr>
+<td>10</td>
+<td>62.83</td>
+<td>314.15</td>
+</tr>
+</tbody></table></blockquote>
+<p>Using <strong>aliases</strong> is also helpful when working with the iModel.js API. The API returns query results as JavaScript object literals where
+each expression of the SELECT clause becomes the member of the object.</p>
+<p>If you, for example, used the <a href="#element-count">Element Count example</a> with the iModel.js API, you would get this JavaScript object literal:</p>
+<pre class="no-line-numbers"><code class="language-typescript"> { &quot;count(*)&quot; : 27 }</code></pre>
+<p>The power of JavaScript object literals is lost here, because <code>count(*)</code> is not a valid member name. If you applied an alias to
+the count expression though so that the ECSQL would look like this:</p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT count(*) elementCount FROM bis.SpatialElement</code></pre>
+<p>the JavaScript object would now look like this:</p>
+<pre class="no-line-numbers"><code class="language-typescript"> { elementCount : 27 }</code></pre>
+<p>Now the result can be consumed in TypeScript as desired:</p>
+<pre class="no-line-numbers"><code class="language-typescript"> iModelDb.withPreparedStatement(&quot;SELECT count(*) elementCount FROM bis.SpatialElement&quot;, (stmt: ECSqlStatement) =&gt; {
+    stmt.step();
+    const row: any = stmt.getRow();
+    console.log(&quot;Element count: &quot; + row.elementCount);
+    });</code></pre>
+<h2 class="h-parametrizing-the-ecsql">Parametrizing the ECSQL<a id="parametrizing-the-ecsql" class="heading-anchor" href="#parametrizing-the-ecsql"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>To reuse the same ECSQL statement with different values, parameters can be used. Reusing ECSQL statements should always be considered because preparing an ECSQL statement can be costly. See the <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql/#ecsql-parameters'>ECSQL Reference</a> for details and some examples. Values for the parameters are bound to the statement via the iModel.js API.</p>
+<p><strong>Not binding a value to a parameter is like binding NULL to it.</strong></p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s that do not have a user label.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId,ECClassId FROM bis.SpatialElement WHERE CodeValue=? LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+</tr>
+<tr>
+<td>no rows</td>
+<td></td>
+</tr>
+</tbody></table></blockquote>
+<p>As you cannot bind values to parameters in the iModelConsole, the above query returns the same as if you did the following.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s that do not have a user label.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId,ECClassId FROM bis.SpatialElement WHERE CodeValue = NULL LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+</tr>
+<tr>
+<td>no rows</td>
+<td></td>
+</tr>
+</tbody></table></blockquote>
+<h2 class="h-comparing-to-null">Comparing to NULL<a id="comparing-to-null" class="heading-anchor" href="#comparing-to-null"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>The above example can be used to mention SQLite&apos;s semantics of comparing to NULL (see also <a href="https://www.sqlite.org/nulls.html">https://www.sqlite.org/nulls.html</a> ). The rule in SQLite is:</p>
+<blockquote>
+<p>SQLite evaluates the expression <code>myProp = NULL</code> always to <code>false</code>, even if the property is unset.</p>
+</blockquote>
+<p>If you want to check whether a property is NULL, i.e. unset, use the <code>IS NULL</code> or <code>IS NOT NULL</code> expressions.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Return all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s that do not have a user label.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId,ECClassId FROM bis.SpatialElement WHERE UserLabel IS NULL LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+</tr>
+<tr>
+<td>0x1000000001d</td>
+<td>MyDomain.Building</td>
+</tr>
+<tr>
+<td>0x10000000020</td>
+<td>MyDomain.Device</td>
+</tr>
+<tr>
+<td>0x10000000022</td>
+<td>MyDomain.Device</td>
+</tr>
+<tr>
+<td>0x10000000025</td>
+<td>MyDomain.Device</td>
+</tr>
+<tr>
+<td>0x10000000028</td>
+<td>MyDomain.Device</td>
+</tr>
+</tbody></table></blockquote>
+<p>And to illustrate the difference, the same query using = NULL does not return any rows.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> Illustrate that expressions like <code>= NULL</code> are always false.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId,ECClassId FROM bis.SpatialElement WHERE UserLabel = NULL LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>ECClassId</th>
+</tr>
+<tr>
+<td>no rows</td>
+<td></td>
+</tr>
+</tbody></table></blockquote>
+<h2 class="h-sql-functions">SQL Functions<a id="sql-functions" class="heading-anchor" href="#sql-functions"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>Any SQL function can be used in ECSQL. This includes functions built into SQLite (see <a href="https://www.sqlite.org/lang_corefunc.html">SQLite Functions overview</a>) or functions built into iModel.js, like the <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/geometrysqlfuncs'>geometry functions</a> which you can use for <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/spatialqueries'>spatial queries</a>.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> For all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s whose code contains the string &apos;DEV&apos; return a more human-readable form of the code by replacing &apos;DEV&apos; by &apos;Device&apos;.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, CodeValue, replace(CodeValue,&apos;DEV&apos;,&apos;Device&apos;) ReadableCode FROM bis.SpatialElement WHERE instr(CodeValue,&apos;DEV&apos;) LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>CodeValue</th>
+<th>ReadableCode</th>
+</tr>
+<tr>
+<td>0x10000000020</td>
+<td>DEV-A-G-1</td>
+<td>Device-A-G-1</td>
+</tr>
+<tr>
+<td>0x10000000022</td>
+<td>DEV-A-G-2</td>
+<td>Device-A-G-2</td>
+</tr>
+<tr>
+<td>0x10000000025</td>
+<td>DEV-A-1-1</td>
+<td>Device-A-1-1</td>
+</tr>
+<tr>
+<td>0x10000000028</td>
+<td>DEV-A-2-1</td>
+<td>Device-A-2-1</td>
+</tr>
+<tr>
+<td>0x1000000002a</td>
+<td>DEV-A-2-2</td>
+<td>Device-A-2-2</td>
+</tr>
+</tbody></table></blockquote>
+<p>The example uses the SQLite functions <a href="https://www.sqlite.org/lang_corefunc.html#replace">replace</a> to replace the substring &apos;DEV&apos; in the code and
+<a href="https://www.sqlite.org/lang_corefunc.html#instr">instr</a> to only do this on rows where the code contains the substring &apos;DEV&apos; at all.</p>
+<p>Note, that the <code>instr</code> function can be replaced by using the standard SQL <code>LIKE</code> operator together with the wildcard <code>%</code>.</p>
+<blockquote>
+<p><strong>Try it yourself</strong></p>
+<p><em>Goal:</em> For all <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./bis/domains/biscore.ecschema/#spatialelement'>SpatialElement</a>s whose code contains the string &apos;DEV&apos; return a more human-readable form of the code by replacing &apos;DEV&apos; by &apos;Device&apos;.</p>
+<p><em>ECSQL</em></p>
+<pre class="no-line-numbers"><code class="language-sql">SELECT ECInstanceId, CodeValue, replace(CodeValue,&apos;DEV&apos;,&apos;Device&apos;) ReadableCode FROM bis.SpatialElement WHERE CodeValue LIKE &apos;%DEV%&apos; LIMIT 5</code></pre>
+<p><em>Result</em></p>
+<table class="table table-responsive"><tbody><tr>
+<th>ECInstanceId</th>
+<th>CodeValue</th>
+<th>ReadableCode</th>
+</tr>
+<tr>
+<td>0x10000000020</td>
+<td>DEV-A-G-1</td>
+<td>Device-A-G-1</td>
+</tr>
+<tr>
+<td>0x10000000022</td>
+<td>DEV-A-G-2</td>
+<td>Device-A-G-2</td>
+</tr>
+<tr>
+<td>0x10000000025</td>
+<td>DEV-A-1-1</td>
+<td>Device-A-1-1</td>
+</tr>
+<tr>
+<td>0x10000000028</td>
+<td>DEV-A-2-1</td>
+<td>Device-A-2-1</td>
+</tr>
+<tr>
+<td>0x1000000002a</td>
+<td>DEV-A-2-2</td>
+<td>Device-A-2-2</td>
+</tr>
+</tbody></table></blockquote>
+<hr>
+<p><a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsqltutorial/keytoecsql'><strong>&lt; Previous</strong></a>  &#xA0; | &#xA0; <a href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsqltutorial/ecsqldatatypes'><strong>Next &gt;</strong></a></p>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#first-ecsql">First ECSQL</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#fully-qualified-class-names">Fully qualified class names</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#element-count">Element Count</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#limiting-the-result-set">Limiting the result set</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#formatting-the-output">Formatting the Output</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#parametrizing-the-ecsql">Parametrizing the ECSQL</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#comparing-to-null">Comparing to NULL</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#sql-functions">SQL Functions</a>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>

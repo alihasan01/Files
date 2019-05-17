@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Curve Primitives - iModel.js</title>
+    <meta name="og:title" content="Curve Primitives - iModel.js">
+    <meta name="twitter:title" content="Curve Primitives - iModel.js">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/bundle.css">
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/landingPage.css"> 
+    
+    <link rel="stylesheet" type="text/css" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/styles/devRegistration.css">  
+        <link rel='shortcut icon' type='image/x-icon' href='http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs_16.png' /> 
+        <meta property="og:description" content="Create Immersive Connections with your Infrastructure Digital Twin."><meta property="og:url" content="imodeljs.org"><meta name="twitter:card" content="summary_large_image">
+        <meta property="og:image" content="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/twitter-share.png">
+        <meta />
+</head>
+
+<body data-site-root=http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/ class='layout-index '>
+    <span id="contentLoader">
+        <p>Woah! This page has a great deal of content... Give us a second to load it.</p>
+    </span>
+    <span id="contentLoaderBackground"></span>
+    <div id="flex-wrapper">
+
+
+
+        <header id="main-header">
+            <div class='nav-header-container'>
+                <nav class="navbar nav-main-header navbar-expand-md fixed-top navbar-light pb-0">
+                    <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+                            <img id="site-logo" class="site-logo" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" /> 
+                            <img id="site-logo-small" class="site-logo-small" src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-icon.svg" style="display:none;"/> 
+                    </a>
+                    <button class="navbar-toggler no-user-select mr-auto" type="button" data-toggle="collapse" data-target="#navbar5">
+                        <span class="navbar-toggler-header"></span>
+                    </button>
+                    <ul class="navbar-nav ml-auto pr-0 nav-search">
+                        <span class='search-bar'>
+                          <li>
+                            <div id='search-container'>
+                            </div>
+                          </li>
+                          <script>
+                            (function() {
+                              var cx = '018053174497532353467:v_gnrjjlqwc';
+                              var gcse = document.createElement('script');
+                              gcse.type = 'text/javascript';
+                              gcse.async = true;
+                              gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                              var s = document.getElementsByTagName('script')[0];
+                              s.parentNode.insertBefore(gcse, s);
+                            })();
+                          </script>
+                          <gcse:searchresults-only gname="sitesearch" resultSetSize="7"></gcse:search>
+                        </span>
+                    </ul>
+                    <div class="navbar-collapse collapse justify-content-stretch" id="navbar5">
+                        <ul class="navbar-nav mb-0" id="doc-site-tabs">
+                                <li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/getting-started">Getting Started</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/bis">BIS</a></li><li class="nav-item active"><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning">Learning</a></li><li class="nav-item "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/reference">API Reference</a></li><li class="nav-item change-history-tab "><a class="nav-link" href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/changehistory">v0.190.0</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+<div id='main-wrapper'>
+    <nav id='sidebar'>
+        <div id='table-of-contents' class="custom-scrollbar">
+            <div id="dismiss">
+                <i id="dismiss-arrow" class="icon icon-chevron-left no-user-select"></i>
+            </div>
+            <hr id="dismiss-hr" class='sm-only'>
+            <ul id='main-navigation-list'>
+                <html><head></head><body><h3 id="the imodel.js library"><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/" class="table-of-contents-link">The iModel.js Library</a></h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/frontend/" class="table-of-contents-link">Frontend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/backend/" class="table-of-contents-link">Backend</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/common/" class="table-of-contents-link">Common</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/" class="table-of-contents-link">Geometry</a></li>
+    </ul>
+    <hr>
+    <p>&#xA0;</p>
+    <h3 id="helpful links">Helpful links</h3>
+    <ul>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/ecsql" class="table-of-contents-link">ECSQL</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/imodelhub/" class="table-of-contents-link">iModelHub</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/wireformat" class="table-of-contents-link">Wire Format</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/faq" class="table-of-contents-link">Frequently Asked Questions</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/guidelines/" class="table-of-contents-link">Guidelines and Tips</a></li>
+    <li><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/./learning/glossary" class="table-of-contents-link">iModel.js Glossary</a></li>
+    </ul>
+    </body></html>
+            </ul>
+        </div>
+    </nav>    <div class='documentation-main'>
+        <article id="main" class="main-content">
+            <button type="button" id="sidebarCollapse" class="no-user-select"> <i class="bread-crumb-label bread-crumb-expand-leftnav icon icon-chevron-right no-user-select" id="expand-leftnav"></i></button><div class='bread-crumb-label'><a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/">Learning</a> > <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/learning/geometry/">geometry</a> > CurvePrimitive</div>
+            <div class="edit-link"><a href="https://bentleycs.visualstudio.com/iModelTechnologies/iModelTechnologies/_git/imodeljs?path=/docs/core/learning%2Fgeometry%2FCurvePrimitive.md" target="_blank">Edit this page</a></div>
+            <h1 id="curve primitives">Curve Primitives</h1>
+<ul>
+<li>A CurvePrimitive is a bounded continuous curve.</li>
+<li>All curves implement methods (e.g. <code>fractionToPoint</code> to refer to &quot;fraction&quot; position along the curve.<ul>
+<li><code>fraction=0</code> is the startof the primitive</li>
+<li><code>fraction=1</code> is the end of the primitive</li>
+<li>increasing fractions always move forward along the primitive.</li>
+<li>curves implment their equations with the fraction representing the parameter in their most natural equations.</li>
+</ul>
+</li>
+<li>All curves also support methods to deal with <em>true distance</em> along the curve. These include<ul>
+<li><code>curve.curveLengthBetweenFractions (startFraction, endFraction)</code></li>
+<li><code>curve.moveByDistanceFromFracton (startFracton, distance)</code></li>
+<li>Fraction position along the curve is strictly proportional to true distance along the curve only for a limited number of curve types:<ul>
+<li>LineSegment3d</li>
+<li>Arc3d</li>
+<li>TransitionSpiral</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Other curve types that have more complicated (non-proportional) fraction-to-distance relations are<ul>
+<li>elliptic arcs</li>
+<li>bspline curves</li>
+<li>linestrings</li>
+</ul>
+</li>
+<li>When movement &quot;by distance&quot; along a chain of curves (of varying types) is required, the <code>CurveChainWithDistanceIndex</code> will act like a single curve (starting and ending at fractions 0 and 1), with the fraction mapped to true distance along the chain.</li>
+</ul>
+<h2 class="h-linesegment">lineSegment<a id="linesegment" class="heading-anchor" href="#linesegment"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>A line segment is a portion of an infinite line.</li>
+<li>Json Fragment: <code>[{&quot;lineSegment&quot;:[[0,0,0], [3,0,0]]}</code></li>
+<li><p>typescript object:</p>
+<pre><code>      const myLineSegment = LineSegment.create (Point3d.create (1,2,3), Point3d.create(6,4,2));</code></pre><p><img src=".././figs/CurvePrimitives/LineSegment.png" alt="&gt;"></p>
+<ul>
+<li>Fractional Parameterization:<pre><code>A = start point
+B = end point
+f = fraction varying from 0 to 1
+Point X(f) at fractional position f along the lineSegment is
+    X(f) = (1-f) * A + f * B</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 class="h-linestring">lineString<a id="linestring" class="heading-anchor" href="#linestring"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>A LineString is an array of points that are to be connected by straight lines.</li>
+<li>Json Fragment:
+<img src=".././figs/CurvePrimitives/LineString.png" alt="&gt;"></li>
+<li>Typescript object:<pre><code>      const myLineString = LineString.create ([point0, point1, point2 ....]);</code></pre></li>
+<li>Fractional Parameterization</li>
+</ul>
+<p>Having both individual line segments and the composite linestring complicates parameterization.</p>
+<ul>
+<li><ul>
+<li>As with all CurvePrimitives, the fractional parameterization for the complete linestring must have <code>fraction=0</code> at the start and <code>fraction=1</code> at the end.</li>
+<li>The fractional positions of each inerior vertex are then defined at <em>equal intervals in the fraction space</em>.</li>
+<li><img src=".././figs/CurvePrimitives/LineStringFractions.png" alt="&gt;"></li>
+<li>Hence in the example, with 4 segments the vertex fractions increment by one quarter.</li>
+<li>Within each segment, the fraction interval is mapped as if it were a line segment.</li>
+<li>Note that having uniform vertex-to-vertex fraction means that the distance-along-the-linestring is <em>not proportional to fraction-along-entire-linestring</em>.   Fraction and distance changes are only proportional within individual segments.</li>
+</ul>
+</li>
+</ul>
+<h2 class="h-arcs-circular-and-elliptic">arcs (circular and elliptic)<a id="arcs-circular-and-elliptic" class="heading-anchor" href="#arcs-circular-and-elliptic"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>An arc primitive is a portion of a circular or ellipticla arc.   The equations for a complete elliptic arc require a center point and two vectors.   The start and end of a partial arc are controlled by two angles.</p>
+<p>The equational forms for circular and elliptic cases are identical.  Telling whether a given arc is true circular requires examination of the vector coordinates.</p>
+<p>The stroking equation that maps  an angle to a coordinates to points around a (full) elliptic (or circular) arc is</p>
+<pre><code>    C = center point
+    U = vector from center point to 0-degere point
+    V = vector from center point to 90-degree point.
+    theta = angle
+    X(theta) = C + cos (theta * U + sin(theta) * V</code></pre><h3 class="h-true-circles">True Circles<a id="true-circles" class="heading-anchor" href="#true-circles"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<ul>
+<li>If the <code>U</code> and <code>V</code> vectors are (both) <em>perpendicular</em> and <em>the same length</em>, this is a true circle.</li>
+<li>In the both circles below, the <code>U</code> and <code>V</code>  are identical length and perpendicular to each other.</li>
+<li>For the left circle, <code>U</code> and <code>V</code> happen to be in the global x and y directions.</li>
+<li>For the right circle, <code>U</code> and <code>V</code> are still identical length and perpendicular, but are both rotated away from global x and y.  This still traces a circle, but the &quot;0 degree&quot; point is moved around the circle.</li>
+<li>When the circular arc conditions are true, the angle used <em>in the equations</em> is an the actual physical angle between the <code>U</code> vector and the vector from the center to <code>X(theta)</code>.</li>
+</ul>
+<p><img src=".././figs/CurvePrimitives/FullCircles.png" alt="&gt;"></p>
+<h3 class="h-ellipse">Ellipse<a id="ellipse" class="heading-anchor" href="#ellipse"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>If the <code>U</code> and <code>V</code> vectors either (a) have different lengths or (b) are not perpendicular, the ellispe is non-circular.</p>
+<p>If <code>U</code> and <code>V</code> are perpendicular, their lengths correspond to the common usage of &quot;major&quot; and &quot;minor&quot; axis lengths.   But the perpendicular condition is not required -- non-perpendicular vectors occur due to transformation and construction history.</p>
+<h3 class="h-angular-limits">Angular limits<a id="angular-limits" class="heading-anchor" href="#angular-limits"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<p>To draw an arc that is not the complete circle or ellipse, simply limit the theta range to something other than 0 to 360 degrees.</p>
+<pre><code>    theta0 = angular start point
+    theta1 = angular and point
+    f = fraction varying from 0 to 1
+    theta(f) = (1-f) * theta0 + f * theta1
+        Point X(f) at fractional position f along the arc is
+
+    X(f) = C + cos (theta(f)) * U + sin(theta(f)) * V</code></pre><ul>
+<li>Angles theta0 and theta1 can be negative and can be outside of 360 degrees.</li>
+<li>Anlge theta1 can be less than theta0</li>
+</ul>
+<p>Examples of arc sweep
+| start and end angles | CCW signed sweep angle | image |
+|----|----|---|
+| (0 to 360) | 360 | <img src=".././figs/CurvePrimitives/EFull.png" alt="&gt;"> |
+| (0 to 135) | 135 | <img src=".././figs/CurvePrimitives/E0to135.png" alt="&gt;"> |
+| (270 to 495) | 225 | <img src=".././figs/CurvePrimitives/E270to495.png" alt="&gt;"> |
+| (90 to 270) | 180 | <img src=".././figs/CurvePrimitives/E90to270.png" alt="&gt;"> |
+| (90 to 405) | 315 | <img src=".././figs/CurvePrimitives/E90to405.png" alt="&gt;"> |</p>
+<p>Examples with json fragments
+<img src=".././figs/CurvePrimitives/ArcJsonFragments.png" alt="&gt;"></p>
+<p><img src=".././figs/CurvePrimitives/EllipticAxisVariants.png" alt="&gt;"></p>
+<h1 id="bspline curves">bspline curves</h1>
+<p>A BSplineCurve3d (or BSplineCurve3dH) is a curve that (loosely) follows a sequence of control points.</p>
+<p>Internally, the curve is a is a sequence of polynomial curves that join together smoothly.  Call each of those separate pieces a <em>span</em>.</p>
+<p>The &quot;control point&quot; structure has remarkable properties for computation:</p>
+<ul>
+<li>The curve never leaves the overall xyz range of the control points.</li>
+<li>This bounding propery applies &quot;from any veiwpoint&quot;, not just in the coordinate system where they are given.</li>
+<li>Even tighter, the curve is contained within the convex hull of the control points.</li>
+<li>No plane can intersect the curve more often than it intersects the control polygon.<ul>
+<li>that is, the polygon may overestimate the number of intersections, (i.e. suggest false intersections), but it never underestimates.</li>
+</ul>
+</li>
+<li>Inspection of the control polygon gives similar &quot;never understimate&quot; statements can be made about other propperties such as<ul>
+<li>the number of inflections.</li>
+<li>the number of minima and maxima of the curve and its derivatives.</li>
+</ul>
+</li>
+<li>The use of &quot;weights&quot; on the control points allows a bspline curve to exactly trace circular and elliptic arcs without use of trig functions.</li>
+</ul>
+<h2 class="h-references">References<a id="references" class="heading-anchor" href="#references"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>There are innumerable books and web pages explaining splines.  There is a high level of consistency of the concepts -- control points, basis functions, knots, and order.  But be very careful about subtle deatils of indexing.   Correct presentations may superficially appear to differ depending on whether the writer has consdiders <code>n</code> indices to run</p>
+<ul>
+<li>C-style, <code>0 &lt;= i &lt; n</code> (with index <code>n</code> <em>not</em> part of the sequence)</li>
+<li>Fortran style , <code>1&lt;=i&lt;n</code></li>
+<li>(rare) <code>0&lt;=i&lt;=n</code></li>
+</ul>
+<p>Some typcial descriptions are:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/B-spline">https://en.wikipedia.org/wiki/B-spline</a></li>
+<li><a href="http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node17.html">http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node17.html</a></li>
+<li><a href="https://www.cs.unc.edu/~dm/UNC/COMP258/LECTURES/B-spline.pdf">https://www.cs.unc.edu/~dm/UNC/COMP258/LECTURES/B-spline.pdf</a></li>
+</ul>
+<p>Be especially careful about the number of knot counts, which can differ by 2 as described in the &quot;overclamping&quot; section.</p>
+<p>The <code>order</code> of the bspline is the number of control points that are &quot;in effect&quot; over an individual span.</p>
+<ul>
+<li>The first span is controlled by the first <code>order</code> control points, i.e. those indexed <code>0, 1, .. (order-1)</code>.</li>
+<li>The next span is controled by control points indexed <code>1,2,..order</code>.<ul>
+<li>That is, there is a &quot;moving window&quot; of <code>order</code> points that control successive spans.</li>
+<li>When moving from one cluster of <code>order</code> control points to the next, the first (left) point of the first cluster is dropped and a new one is added at the right.</li>
+</ul>
+</li>
+<li>The sharing of control points provide the critical properties for the curve:<ul>
+<li>No matter how many control points there are (think dozens to hundreds), each individual span is controled by only <code>order</code> points.</li>
+<li>this &quot;local control&quot; prevents changes &quot;far away&quot; in the control points from causing unexpected global changes in the curve.</li>
+<li>The sharing of <code>order-1</code> points works into the formulas to guarantee smoothness of the curve.</li>
+<li>Specifically, for a bspline of given <code>order</code>:<ul>
+<li>If the knots are strictly increasing (no duplicates) the curve has <code>order-2</code> (i.e. <code>degree-1</code>) continuous derivatives.</li>
+<li>Introducing repeated knots reduces the continuity.  In particular, with <code>order-1</code> repeated knots there is a cusp (abrupt slope change) at that knot.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="h-summary">Summary<a id="summary" class="heading-anchor" href="#summary"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<p>The required data for a bspline curve is:
+|-----|-----|------|
+| name | type | remarks |
+| control points | array of N points |
+| order | number | the most common orders are 2 through 4;  higher order gives smoother curves, but with performance cost. |
+|  | | Order higher than 10 is discouraged |
+| | |  3 (quaratic curve, degree 2)
+|  | |or 4 (cubic curve, degree 3) |
+| knots    | array of <code>(N + order - 2)</code> numbers | See knot paragraph |</p>
+<h2 class="h-order">order<a id="order" class="heading-anchor" href="#order"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>The <code>order</code> is the number of control points that affect each span of the curve.</li>
+<li>Bspline equations hypothetically allow any integer <code>order</code>.</li>
+<li>For practical use the common orders are quite low - 2,3,4, with occasional 5 through 8<ul>
+<li><code>order=2</code> - the Bspline is a collection of straight lines (degree 1)</li>
+<li><code>order=3</code>  - the Bspline is a collection of quadratic curves. (degree = 2)   (Quadratic curves with weights can exactly trace circular and elliptic arcs)</li>
+<li><code>order=4</code> - the Bspline is a collection of cubic spans. These can have inflections within a span.</li>
+<li>many graphics systems focus on cubic (<code>order=4, degree=3</code> bsplines.   These are a good balance of curve flexibility and computational cost.</li>
+</ul>
+</li>
+<li>Conversationally, if one is thinking of &quot;quadratic&quot; cubic &quot;curves&quot;, it is common to refer to the <code>degree</code>, which is one less than the order<ul>
+<li>the <code>degree</code> is the highest power appearing in the polynomial</li>
+<li>A conventional polynomial form would have coefficients of terms with power 1,2, through <code>degree</code>.</li>
+<li>That polynomial would alwo include a constant term that does not muliply a power of x.</li>
+<li>Hence there is <em>one more coefficient</em> than the degree.</li>
+<li>textbook algebra discussions prefer reference to the highest power (<code>degree</code>) because that is short indicator of complexity</li>
+<li>Bspline discussion prefers reference to <code>order</code> rather than <code>degree</code> because all of the internal matrix manipulations must account for that many coefficients.</li>
+</ul>
+</li>
+</ul>
+<h2 class="h-knots">knots<a id="knots" class="heading-anchor" href="#knots"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>The knots are an array of sorted numbers.</li>
+<li>If there are K knots:<ul>
+<li>Each cluster of <code>2*order-2</code> knots (i.e. <code>2*degree</code> knots affects a single span</li>
+<li>The knots index at <code>knots[i]</code> through <code>knots[i+2*order-3]</code> (inclusive) affect span <code>i</code>.</li>
+<li>That knot values for that span are from <code>knots[i+order-2]</code> through <code>knots[i+2*order-2]</code>.</li>
+</ul>
+</li>
+<li>Within the knots sequence, the values must never go down.</li>
+</ul>
+<h3 class="h-clamping">Clamping<a id="clamping" class="heading-anchor" href="#clamping"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h3>
+<ul>
+<li>If knot values are strictly increasing -- e.g. 1,2,3,4,5, -- all the way to the end, the curve does <em>not</em> pass through the first and last control points.</li>
+<li>Having the right number of identical knot values &quot;at the ends&quot; makes the curve (a) pass through the end control points and (b) have tangent direction towards the immeidate neighbor.</li>
+<li>Specifically, for a curve of given <code>degree</code>, exactly that number of repeated knots creates the usual &quot;clamped&quot; effects.<ul>
+<li>For instance, for a cubic curve, the knots <code>[0,0,0,0.25,0.5,0.75,1.1.1]</code> will<ul>
+<li>Pass through both end points, with tangent along the end segment of the polygon</li>
+<li>have interior knot breaks at 0.25, 0.5 and 0.75.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="h-overclamping">OVERCLAMPING<a id="overclamping" class="heading-anchor" href="#overclamping"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h4>
+<ul>
+<li>An important point for exchanging knots with legacy graphics systems (including Microstation and Parsolid) is that there is a long-established (an unneccessary) practice of having <em>one extra (unused) knot at each end</em>.</li>
+<li>That is, the <em>overclamped</em> cubic knot sequence with breaks at 0.25, 0.5, and 0.75 would be  <code>[0,0,0,0,0.25,0.5,0.75,1.1.1,1]</code>.</li>
+<li>The equations for the bsplne will never reference the extra knots at the beginning and end.</li>
+<li>In the overclamping convention, the relation of counts of control points (N) and (overclampled) knots is
+...<pre><code>      numberOfKnotsWithOverclamping = N + order = numberOfControlPoints + order</code></pre>...</li>
+</ul>
+<p>In <code>imodeljs</code></p>
+<ul>
+<li>the spline classes (<code>BsplineCurve3d</code>, <code>BSplineCurve3dH</code> and surface partners) <em>internally</em> do <em>not</em> overclamp.</li>
+<li>The API for constructing splines accepts both styles of input.  The order, knot count, and control point counts distinguish which style is being used.<ul>
+<li>If <code>numberOfControlPoints === numberOfKnots + order</code> the curve is overclamped, so the first and last knot values are not saved in the bspline curve object</li>
+<li>If <code>numberOfControlPoints === numberOfKnots + order - 2</code> the knots are all used.</li>
+</ul>
+</li>
+<li>The curve objects have method
+...
+  curve.copyKnots(includeExtraEndKnot: boolean)
+...
+to extract knots.  The caller can indicate if they prefer overlcamped knots by passing <code>true</code> for the <code>includeExtraEndKnot</code> parameter.</li>
+<li>When knots are written in <code>iModelJson</code> objects, they are written with overclamp.</li>
+</ul>
+<h2 class="h-example-order-2-linear-bspline-curve">Example: Order 2 (linear) bspline curve<a id="example-order-2-linear-bspline-curve" class="heading-anchor" href="#example-order-2-linear-bspline-curve"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>An order 2 bspline curve has degree 1, i.e. is straight lines</li>
+<li>The circles in the figure for order 2 bspline are both control points and span breaks.<ul>
+<li>This is the only order for which the span breaks occur at the control points.</li>
+</ul>
+</li>
+<li>The direction (first derivative) changes at control point</li>
+<li>Hence there are sharp corners exactly at the control points.</li>
+</ul>
+<p><img src=".././figs/BCurves/order2.png" alt="&gt;"></p>
+<h2 class="h-example-order-3-quadratic-bspline-curve">Example: Order 3 (quadratic) bspline curve<a id="example-order-3-quadratic-bspline-curve" class="heading-anchor" href="#example-order-3-quadratic-bspline-curve"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>An order 3 bspline curve has degree 2, i.e. is piecewise quadratic</li>
+<li>The curve does <em>not</em> pass through the control points (dark)</li>
+<li>There are (for uniform interior knots) span breaks (circles) at midpoints of interior edges.</li>
+<li>Span changes (circles) are exactly at the midpoints of polygon edges.</li>
+<li>Direction (slope, first derivative) is continuous at each span change (circles)</li>
+<li>The concavity (second derivative) changes abruptly at each span change (circles)<ul>
+<li>This concavity change is not always visually obvious.</li>
+<li>These curves are not as smooth as your eye thinks.</li>
+</ul>
+</li>
+<li>There are no concavity changes within any single span.</li>
+<li>Clamping (2 identical knots at start, 2 identical knots at end) makes the curve pass throught the end control points and point at neighbors.</li>
+</ul>
+<p><img src=".././figs/BCurves/order3.png" alt="&gt;"></p>
+<h2 class="h-example-order-4-cubic-bspline-curve">Example: Order 4 (cubic) bspline curve<a id="example-order-4-cubic-bspline-curve" class="heading-anchor" href="#example-order-4-cubic-bspline-curve"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>An order 4 bspline curve has degree 3, i.e. is piecewise cubic</li>
+<li>The curve does <em>not</em> pass through the control points (dark).</li>
+<li>The curve does <em>not</em> pass through particular points of the polygon edges.</li>
+<li>Span changes (circles) are generally &quot;off the polygon&quot;</li>
+<li>Direction and concavity are both continuous at span changes.</li>
+<li>There can be one concavity change within a span.</li>
+<li>Clamping (3 identical knots at start, 3 identical knots at end) makes the curve pass throught the end control points and point at neighbors.</li>
+</ul>
+<p><img src=".././figs/BCurves/order4.png" alt="&gt;"></p>
+<h2 class="h-example-order-5-quartic-bspline-curve">Example: Order 5 (quartic) bspline curve<a id="example-order-5-quartic-bspline-curve" class="heading-anchor" href="#example-order-5-quartic-bspline-curve"><span><i class="fa fa-link fa-rotate-90"></i></span></a></h2>
+<ul>
+<li>An order 5 bspline curve has degree 4, i.e. is piecewise quartic</li>
+<li>The curve does <em>not</em> pass through the control points (dark).</li>
+<li>The curve does <em>not</em> pass through particular points of the polygon edges.</li>
+<li>Span changes (circles) are generally &quot;off the polygon&quot;</li>
+<li>Direction, concavity, and one more derivative are all continuous at span changes.</li>
+<li>There can be two concavity change within a span.</li>
+<li>Clamping (4 identical knots at start, 4 identical knots at end) makes the curve pass throught the end control points and point at neighbors.</li>
+</ul>
+<p><img src=".././figs/BCurves/order5.png" alt="&gt;"></p>
+
+            <p class='last-updated'>Last Updated:
+                <span class='date-updated'>08 May, 2019</span>
+            </p>
+            <div id="imodeljs-github-comments">
+            </div>
+            
+            <script>
+              $(document).ready(function () {
+                function initializeComments(repo) {
+                  var s = document.createElement('script');
+                  s.src = "http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/utterances/client.js";
+                  s.setAttribute('repo', repo);
+                  s.setAttribute('issue-term', 'title');
+                  s.setAttribute('crossorigin', 'anonymous');
+                  s.setAttribute('theme', 'github-light');
+                  s.async = true;
+            
+                  document.getElementById("imodeljs-github-comments").appendChild(s);
+                }
+            
+                var shouldShow = ldclient.variation(featureFlags.GithubIssuesFeedback);
+            
+                // shouldShow is undefined when ldclient has not emitted 'ready'.
+                if (shouldShow === undefined) {
+                  ldclient.on('ready', function () {
+                    var gitIssueFlag = ldclient.variation(featureFlags.GithubIssuesFeedback);
+                    var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                    if (gitIssueFlag) {
+                      initializeComments(gitRepo);
+                    }
+                  });
+                }
+                else if (shouldShow) {
+                  var gitRepo = ldclient.variation(featureFlags.GitRepo);
+                  initializeComments(gitRepo);
+                }
+              });
+            </script>
+            
+            <script type="text/javascript">
+            
+            </script>        </article>
+    </div>
+    <div class="toc-overlay"></div>
+    <div id='inner-table-of-contents'>
+       <!-- <div id='sticky-container' style="top: 76px; position: fixed;">
+  <h4 class='heading'>On this page</h4>
+    <div id="overview-container" class="clusterize-scroll">
+      <ul id='nav' class='right-nav nav flex-column clusterize-content'>
+              <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#linesegment">lineSegment</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#linestring">lineString</a>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-arcs-circular-and-elliptic" class='title' href="#arcs-circular-and-elliptic"/>
+            <b class='dropdown-menu-title menu-text'>arcs (circular and elliptic)</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-arcs-circular-and-elliptic" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#true-circles">True Circles</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#ellipse">Ellipse</a>
+                    </li>
+                    <li class='nav-item item '>
+                            <a class='title solo-title menu-text' href="#angular-limits">Angular limits</a>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#references">References</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#summary">Summary</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#order">order</a>
+    </li>
+       <li class='nav-item item '>
+            <a data-target="#inner-nav-knots" class='title' href="#knots"/>
+            <b class='dropdown-menu-title menu-text'>knots</b>
+            <i class='nav-list-dropdown icon'></i>
+            </a>
+            <ul id="inner-nav-knots" class='inner-nav'>
+                    <li class='nav-item item '>
+                            <a data-target="#inner-nav-clamping" class='title' href="#clamping"/>
+                            <b class='dropdown-menu-title menu-text'>Clamping</b>
+                            <i class='nav-list-dropdown icon'></i>
+                            </a>
+                            <ul id="inner-nav-clamping" class='inner-nav'>
+                                    <li class='nav-item item '>
+                                            <a class='title solo-title menu-text' href="#overclamping">OVERCLAMPING</a>
+                                    </li>
+                            </ul>
+                    </li>
+            </ul>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#example-order-2-linear-bspline-curve">Example: Order 2 (linear) bspline curve</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#example-order-3-quadratic-bspline-curve">Example: Order 3 (quadratic) bspline curve</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#example-order-4-cubic-bspline-curve">Example: Order 4 (cubic) bspline curve</a>
+    </li>
+       <li class='nav-item item '>
+            <a class='title solo-title menu-text' href="#example-order-5-quartic-bspline-curve">Example: Order 5 (quartic) bspline curve</a>
+    </li>
+ 
+      </ul>
+    </div>
+  </div>
+
+ -->
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small mdb-color pt-1 pb-3">
+  <!-- Footer Links Container -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row d-flex align-items-center mt-2">
+
+      <!-- Grid column -->
+      <div class="col-md-7 col-lg-8 align-top d-none d-md-block">
+
+        <a href="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/" class="navbar-brand">
+          <img id="site-logo" class="site-logo" style="zoom:75%;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/imodeljs-logo.svg" />
+        </a>
+        <small style="color: white; margin-right: 7px;"> powered by </small>
+        <a href="https://www.bentley.com">
+          <img href="https://www.bentley.com" id="sponsored-by-logo" class="sponsored-by-logo"
+            style="zoom:75%; width: 162px; height: 37px;"
+            src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/landing-page/assets/bentley.svg" />
+        </a>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-5 col-lg-4 ml-lg-0">
+
+        <!-- Social buttons -->
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://twitter.com/imodeljs" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://github.com/imodeljs" target="_blank">
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn-floating btn-sm rgba-white-slight mx-1" href="https://stackoverflow.com/tags/imodeljs"
+                target="_blank">
+                <i class="fa fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links Container -->
+
+</footer>
+<!-- Footer -->
+
+</div>
+<a href="javascript:" id="return-to-top"><i class="icon icon-chevron-up"></i></a>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/bundle.js"></script>
+</body>
+
+</html>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/monaco-editor/min/vs/loader.js"></script>
+<script src="http://builds.bentley.com/prgbuilds/AzureBuilds/iModelJsDocs/public/scripts/ts-playground.js"></script>
